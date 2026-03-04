@@ -13,6 +13,7 @@ import FiltersDebugContent from './filters/debug/filters-debug.html';
 import FiltersCustomContent from './filters/custom/filters-custom.html';
 import ResultsDebugContent from './results/debug/results-debug.html';
 import ResultsCustomContent from './results/custom/results-custom.html';
+import UnifiedCardsContent from './results/unifiedCards/unifiedCards.html';
 
 export enum BuiltinLayoutsKeys {
     ResultsDebug = 'ResultsDebug',
@@ -22,6 +23,7 @@ export enum BuiltinLayoutsKeys {
     FiltersCustom = 'FiltersCustom',
     DetailsList = 'DetailsList',
     Cards = 'Cards',
+    UnifiedCards = 'UnifiedCards',
     Slider = 'Slider',
     SimpleList = 'SimpleList',
     People = 'People',
@@ -97,6 +99,15 @@ export class AvailableLayouts {
             iconName: 'Tiles',
             type: LayoutType.Results,
             templateContent: CardsContent,
+            renderType: LayoutRenderType.Handlebars,
+            serviceKey: null // ServiceKey will be created dynamically for builtin layout
+        },
+        {
+            name: "Unified Article Cards",
+            key: BuiltinLayoutsKeys.UnifiedCards.toString(),
+            iconName: 'Articles',
+            type: LayoutType.Results,
+            templateContent: UnifiedCardsContent,
             renderType: LayoutRenderType.Handlebars,
             serviceKey: null // ServiceKey will be created dynamically for builtin layout
         },
