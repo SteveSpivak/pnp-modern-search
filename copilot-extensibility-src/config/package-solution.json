@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "copilot-extensibility-client-side-solution",
+    "id": "c60a4f5b-11d8-4f5c-a521-cf7b98d28c31",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Chat.Read"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "ChannelMessage.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "ExternalItem.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Files.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Sites.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "OnlineMeetingAiInsight.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "OnlineMeetingTranscript.Read.All"
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "copilot-extensibility description"
+      },
+      "longDescription": {
+        "default": "copilot-extensibility description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "copilot-extensibility Feature",
+        "description": "The feature that activates elements of the copilot-extensibility solution.",
+        "id": "1b0a5f5b-11d8-4f5c-a521-cf7b98d28c31",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/copilot-extensibility.sppkg"
+  }
+}
