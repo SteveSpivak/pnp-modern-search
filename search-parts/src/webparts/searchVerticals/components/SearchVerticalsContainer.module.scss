@@ -11,3 +11,57 @@
     }
   }
 }
+/* Enhanced Search Verticals (Orange/Slate Theme) */
+:global(div[data-sp-feature-tag="pnpSearchVerticalsWebPart web part (PnP - Search Verticals)"]) {
+
+  /* Filter Controls */
+  :global(div[role="tablist"]) {
+      display: flex;
+      justify-content: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: slideInUp 0.8s ease-out 0.2s both;
+      flex-direction: row;
+  }
+
+  :global(div[role="tablist"]) :global(button) {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(249, 115, 22, 0.38);
+      color: #64748b;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: capitalize;
+  }
+
+  :global(div[role="tablist"]) :global(button)::after {
+      display: none;
+  }
+
+  :global(div[role="tablist"]) :global(button:hover),
+  :global(div[role="tablist"]) :global(button.is-selected) {
+      background: linear-gradient(45deg, #f97316, #ea580c);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+      border-color: transparent;
+  }
+}
+
+:global(.modernActionBar_f35fd220) {
+  margin-bottom: 0;
+}
+
+:global(.compactContainer_8a9bdb68) {
+  gap: 0;
+}
+
+:global(div[data-sp-web-part-id="544c1372-77ae-40a0-9095-805ae2a0d5e9"]) :global(.ms-Pivot-link::before) {
+  background-color: transparent;
+}
