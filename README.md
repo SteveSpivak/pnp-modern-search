@@ -2,6 +2,11 @@
 
 This is a open source solution that helps you to build engaging search based solutions in the SharePoint modern experience.
 
+## New Features
+- **M365 Copilot Services Integration:** Features new Core search-extensibility APIs hooking into `/beta/copilot/conversations` natively via SPFx MSGraphClientV3.
+- **Unified Design Language (Orange/Slate):** Overhauled UI using gradient toggle buttons with pure CSS sibling selectors and high-fidelity micro-animations for cards and grids.
+- **Performance Optimizations:** Optimized `DataSourceHelper` filters processing, eliminating functional parsing bottlenecks in favor of safe iterative loops.
+
 ## Get Started
 
 Download the [latest release](https://github.com/microsoft-search/pnp-modern-search/releases/latest).

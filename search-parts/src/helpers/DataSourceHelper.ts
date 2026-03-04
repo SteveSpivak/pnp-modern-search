@@ -59,12 +59,32 @@ export class DataSourceHelper {
      * @returns The cleaned combo box options
      */
     public static parseAndCleanOptions(options: IComboBoxOption[]): IComboBoxOption[] {
-        const optionWithComma = options.find(o => (o.key as string).indexOf(",") > 0);
-        if (optionWithComma) {
-            return (optionWithComma.key as string).split(",").map(k => { 
-                return { key: k.trim(), text: k.trim(), selected: true }; 
-            });
+        let hasComma = false;
+        for (let i = 0; i < options.length; i++) {
+            if ((options[i].key as string).indexOf(",") > 0) {
+                hasComma = true;
+                break;
+            }
         }
+
+        if (hasComma) {
+            const results: IComboBoxOption[] = [];
+            for (let i = 0; i < options.length; i++) {
+                const option = options[i];
+                const key = option.key as string;
+                if (key.indexOf(",") > 0) {
+                    const parts = key.split(",");
+                    for (let j = 0; j < parts.length; j++) {
+                        const k = parts[j].trim();
+                        results.push({ key: k, text: k, selected: true });
+                    }
+                } else {
+                    results.push(option);
+                }
+            }
+            return results;
+        }
+
         return options;
     }
 

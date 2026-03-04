@@ -1,13 +1,64 @@
 .searchBox {
-
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // When the component has focus, trigger the button and hints
+  &:focus-within {
+    .searchBoxWrapper {
+      border-color: #f97316;
+      box-shadow:
+        0 0 0 3px rgba(249, 115, 22, 0.15),
+        0 8px 25px rgba(249, 115, 22, 0.2);
+
+      // Reveal the "Press Enter" hint
+      &::after {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+      }
+    }
+
+    .searchButton {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(-50%) scale(1);
+    }
+  }
 
   .searchBoxWrapper {
       display: flex;
-      border: 1px solid #c2c2c2;
+      background: #ffffff;
+      border: 1px solid rgba(249, 115, 22, 0.1);
+      border-radius: 28px;
+      padding: 4px;
+      box-shadow: 0 18px 60px rgba(249, 115, 22, 0.06);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      position: relative;
 
       &:hover {
-        border-color: #272727;
+        transform: translateY(-2px);
+        border-color: rgba(249, 115, 22, 0.18);
+        box-shadow: 0 26px 80px rgba(249, 115, 22, 0.1);
+      }
+
+      // "Press Enter" hint
+      &::after {
+        content: "Press Enter ↵";
+        position: absolute;
+        right: 64px;
+        top: 50%;
+        transform: translateY(-50%) scale(0.95);
+        background: rgba(249, 115, 22, 0.1);
+        color: #f97316;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 0;
+        pointer-events: none;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(249, 115, 22, 0.2);
+        transition: all 0.3s ease;
       }
   }
 
@@ -15,66 +66,119 @@
       width: 100%;
       flex: 1 1 auto;
       border: none;
-      min-height: 32px; 
-      height: auto;
+      background: transparent;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
 
-      // Support for dynamic placeholder color
+      // Support for dynamic placeholder color (overridden to ensure NO dark mode)
       :global(.ms-SearchBox-field) {
-        &::placeholder {
-          color: var(--placeholder-color, #605e5c);
-        }
-        &::-webkit-input-placeholder {
-          color: var(--placeholder-color, #605e5c);
-        }
-        &::-moz-placeholder {
-          color: var(--placeholder-color, #605e5c);
-        }
-        &:-ms-input-placeholder {
-          color: var(--placeholder-color, #605e5c);
-        }
+        background: transparent !important;
+        color: #0f172a !important; // Force dark text even if system is dark mode
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        outline: none !important;
+
+        &::placeholder,
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
         &:-moz-placeholder {
-          color: var(--placeholder-color, #605e5c);
+          color: #94a3b8 !important;
+          font-weight: 400;
         }
       }
 
-      // Dynamic icon sizing for search and clear icons
+      // Remove default outline
+      &::after,
+      :global(.ms-SearchBox-field)::after {
+        display: none !important;
+      }
+
+      // Dynamic icon sizing & styling for search and clear icons
+      :global(.ms-SearchBox-iconContainer) {
+        color: #f97316 !important;
+        transition: all 0.3s ease;
+      }
+
+      &:focus-within :global(.ms-SearchBox-iconContainer) {
+        color: #ea580c !important;
+        transform: scale(1.1);
+        text-shadow: 0 0 10px rgba(249, 115, 22, 0.25);
+      }
+
       :global(.ms-SearchBox-icon) {
-        font-size: var(--search-icon-size, 16px);
+        font-size: var(--search-icon-size, 18px);
       }
       
       :global(.ms-SearchBox-clearButton) {
         i {
           font-size: var(--clear-icon-size, 16px);
+          color: #f97316;
+          &:hover {
+            color: #ea580c;
+          }
         }
       }
   }
 
   .searchButton {
-      background: '[theme:primaryButtonBackground, default:#0078d7]' !important;
+      position: absolute !important;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%) scale(0.95);
+      width: 40px;
+      height: 40px;
+      border-radius: 50% !important;
+      background: linear-gradient(45deg, #f97316, #ea580c) !important;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0; // Hidden until focus
+      pointer-events: none;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+      z-index: 2;
       
       &:hover {
-        background: '[theme:primaryButtonBackgroundHovered, default:#0078d7]' !important;
+        background: linear-gradient(45deg, #ea580c, #dc2626) !important;
+        transform: translateY(-50%) scale(1.08) !important;
+        box-shadow:
+          0 8px 20px rgba(249, 115, 22, 0.5),
+          0 0 25px rgba(249, 115, 22, 0.4) !important;
       }
 
       // Target all button types within search button container
       :global(.ms-Button) {
-        background: '[theme:primaryButtonBackground, default:#0078d7]' !important;
+        background: transparent !important;
+        border-radius: 50% !important;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         
         &:hover {
-          background: '[theme:primaryButtonBackgroundHovered, default:#0078d7]' !important;
+          background: transparent !important;
         }
       }
 
       & i {
-        color: '[theme:primaryButtonText, default:#ffffff]';
+        color: #ffffff !important;
+        font-size: 16px;
+        font-weight: bold;
         &:hover {
-          color: '[theme:primaryButtonTextHovered, default:#ffffff]';
+          color: #ffffff !important;
         }
       }
   }
 
   .errorMessage {
       margin-bottom: 10px;
+      color: #dc2626;
   }
 
   *::-ms-clear {
@@ -96,23 +200,27 @@
   .suggestionGroupName {
       padding: 6px;
       font-size: 14px;
-      font-weight: 400;
-      color: #777;
+      font-weight: 600;
+      color: #f97316; // Orange themed
   }
 
   .suggestionItem {
-      padding: 2px 10px;
+      padding: 8px 10px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       flex-direction: row;
       text-decoration: none;
-      min-height: 28px;
+      min-height: 32px;
       cursor: pointer;
-      color: #333;
+      color: #0f172a;
+      border-radius: 8px;
+      margin: 0 4px;
+      transition: all 0.2s ease;
 
       &:hover {
-          background-color: #f4f4f4;
+          background-color: rgba(249, 115, 22, 0.08);
+          color: #ea580c;
       }
 
       .suggestionIcon {
@@ -139,11 +247,12 @@
 
       .suggestionDisplayText {
           padding-right: 4px;
+          font-weight: 500;
       }
 
       .suggestionDescription {
-          font-size: 0.9em;
-          color: #777;
+          font-size: 0.85em;
+          color: #64748b;
       }
 
       .suggestionAction {
@@ -151,6 +260,7 @@
           flex-direction: row;
           justify-content: center;
           font-size: 16px;
+          color: #94a3b8;
       }
   }
 
@@ -158,15 +268,66 @@
       position: absolute;
       width: 100%;
       box-sizing: border-box;
-      z-index: 1;
+      z-index: 100;
       background-color: #ffffff;
-      border-bottom: 1px solid #ccc;
-      border-left: 1px solid #ccc;
-      border-right: 1px solid #ccc;
+      border: 1px solid rgba(249, 115, 22, 0.15);
+      border-radius: 16px;
+      margin-top: 12px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(249, 115, 22, 0.05);
+      padding: 8px 0;
+      overflow: hidden;
   }
 }
 
 .parentStackingCtx {
   position: relative;
   z-index: 1;
+}
+
+// ==========================================
+// Extra: PnP Search Verticals (Filter Tabs)
+// ==========================================
+div[data-sp-feature-tag="pnpSearchVerticalsWebPart web part (PnP - Search Verticals)"] {
+  div[role="tablist"] {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    animation: slideUp 0.8s ease-out 0.2s both;
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(249, 115, 22, 0.38);
+      color: #64748b;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: capitalize;
+
+      &:after {
+        display: none;
+      }
+
+      &:hover,
+      &.is-selected {
+        background: linear-gradient(45deg, #f97316, #ea580c);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -4,6 +4,8 @@ use_directory_urls: true
 nav:
   - Getting Started:
     - Introduction: index.md
+    - Architecture: architecture.md
+    - Learned Lessons: learned_lessons.md
     - Installation: installation.md
     - Scenario tutorials: scenarios/index.md
     - Create custom layouts: create-custom-layouts/index.md

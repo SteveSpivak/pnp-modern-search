@@ -110,6 +110,16 @@ export class LayoutHelper {
                     serviceKey = ServiceKey.create<ILayout>('PnPModernSearchCardsLayout', CardsLayout);
                     break;
 
+                case BuiltinLayoutsKeys.UnifiedCards:
+
+                    const { UnifiedCardsLayout } = await import(
+                        /* webpackChunkName: 'pnp-modern-search-results-unifiedcards-layout' */
+                        '../layouts/results/unifiedCards/UnifiedCardsLayout'
+                    );
+
+                    serviceKey = ServiceKey.create<ILayout>('PnPModernSearchUnifiedCardsLayout', UnifiedCardsLayout);
+                    break;
+
                 // Slider
                 case BuiltinLayoutsKeys.Slider:
 

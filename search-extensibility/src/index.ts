@@ -31,3 +31,12 @@ export * from './models/dataSources/IResultTemplates';
 export * from './models/queryModifier/BaseQueryModifier';
 export * from './models/queryModifier/IQueryModifier';
 export * from './models/queryModifier/IQueryModifierDefinition';
+
+export * from './services/copilot/CopilotChatService';
+export * from './services/copilot/ICopilotChatService';
+export * from './services/copilot/CopilotMeetingInsightsService';
+export * from './services/copilot/ICopilotMeetingInsightsService';
+export * from './services/copilot/CopilotSearchService';
+export * from './services/copilot/ICopilotSearchService';
+export * from './services/copilot/CopilotUsageReportsService';
+export * from './services/copilot/ICopilotUsageReportsService';
