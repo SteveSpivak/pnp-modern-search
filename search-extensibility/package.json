@@ -36,6 +36,7 @@
         "@microsoft/sp-adaptive-card-extension-base": "1.22.1",
         "@microsoft/sp-component-base": "1.22.1",
         "@microsoft/sp-core-library": "1.22.1",
+        "@microsoft/sp-http": "1.22.1",
         "@microsoft/sp-lodash-subset": "1.22.1",
         "@microsoft/sp-property-pane": "1.22.1",
         "@microsoft/sp-webpart-base": "1.22.1",
