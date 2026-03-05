@@ -2,6 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BaseWebComponent } from "@pnp/modern-search-extensibility";
 import { CopilotChat } from "./CopilotChat";
+import { CopilotApiLibrary } from "../../CopilotApiLibrary";
 
 /**
  * BaseWebComponent wrapper that bridges PnP Modern Search's custom HTML tags
@@ -22,7 +23,8 @@ export class CopilotChatComponent extends BaseWebComponent {
     ReactDOM.render(
       React.createElement(CopilotChat, {
         initialMessage: searchTerms,
-        existingConversationId: conversationId
+        existingConversationId: conversationId,
+        serviceScope: CopilotApiLibrary.serviceScope
       }),
       this
     );

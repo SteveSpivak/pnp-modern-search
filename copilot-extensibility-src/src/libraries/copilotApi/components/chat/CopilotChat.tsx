@@ -1,40 +1,68 @@
 import * as React from "react";
-import { CopilotApiLibrary } from "../../CopilotApiLibrary";
+import { ServiceScope } from "@microsoft/sp-core-library";
+import { MSGraphClientFactory, MSGraphClientV3 } from "@microsoft/sp-http";
 
 export interface ICopilotChatProps {
   initialMessage?: string;
   existingConversationId?: string;
+  serviceScope: ServiceScope;
 }
 
 /**
  * Inner React component that performs the actual rendering and Graph API calls
  * while encapsulating all mutable state to adhere to PnP BaseWebComponent rules.
  */
-export const CopilotChat: React.FC<ICopilotChatProps> = ({ initialMessage, existingConversationId }) => {
+export const CopilotChat: React.FC<ICopilotChatProps> = ({ initialMessage, existingConversationId, serviceScope }) => {
   const [conversationId, setConversationId] = React.useState<string | undefined>(existingConversationId);
   const [messages, setMessages] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<string | undefined>();
   const [input, setInput] = React.useState<string>(initialMessage || "");
+  const [graphClient, setGraphClient] = React.useState<MSGraphClientV3 | null>(null);
+
+  React.useEffect(() => {
+    let active = true;
+
+    // Asynchronously consume the MSGraphClient from the serviceScope provided by the host Extensibility Library
+    const initGraphClient = async () => {
+      if (!serviceScope) return;
+
+      try {
+        const msGraphClientFactory = serviceScope.consume(MSGraphClientFactory.serviceKey);
+        const client = await msGraphClientFactory.getClient("3");
+        if (active) {
+          setGraphClient(client);
+        }
+      } catch (err) {
+        console.error("[CopilotChat] Failed to initialize Graph Client.", err);
+        if (active) {
+          setError("Failed to initialize Microsoft Graph client.");
+        }
+      }
+    };
+
+    initGraphClient();
+
+    return () => { active = false; };
+  }, [serviceScope]);
 
   // Fetch or initialize the conversation
   const sendMessage = async () => {
     if (!input || input.trim().length === 0) return;
+    if (!graphClient) {
+      setError("Graph Client not ready.");
+      return;
+    }
 
     setLoading(true);
     setError(undefined);
 
     try {
-      const client = CopilotApiLibrary.msGraphClient;
-      if (!client) {
-        throw new Error("MS Graph Client is not initialized.");
-      }
-
       let activeConvoId = conversationId;
 
       // 1. Create a conversation if one doesn't exist
       if (!activeConvoId) {
-        const convoResponse = await client.api("/copilot/conversations").version("beta").post({});
+        const convoResponse = await graphClient.api("/copilot/conversations").version("beta").post({});
         activeConvoId = convoResponse.id;
         setConversationId(activeConvoId);
       }
@@ -44,7 +72,7 @@ export const CopilotChat: React.FC<ICopilotChatProps> = ({ initialMessage, exist
       setMessages((prev) => [...prev, userMessage]);
 
       // 3. Send message to the specific conversation endpoint
-      const chatResponse = await client
+      const chatResponse = await graphClient
         .api(`/copilot/conversations/${activeConvoId}/chat`)
         .version("beta")
         .post({
@@ -101,13 +129,13 @@ export const CopilotChat: React.FC<ICopilotChatProps> = ({ initialMessage, exist
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && !loading && sendMessage()}
           placeholder="Ask Copilot a question..."
-          disabled={loading}
+          disabled={loading || !graphClient}
           style={{ flexGrow: 1, padding: "8px", borderRadius: "4px", border: "1px solid #ccc" }}
         />
         <button
           onClick={sendMessage}
-          disabled={loading || !input.trim()}
-          style={{ padding: "8px 16px", backgroundColor: "#0078d4", color: "white", border: "none", borderRadius: "4px", cursor: loading ? "not-allowed" : "pointer" }}
+          disabled={loading || !input.trim() || !graphClient}
+          style={{ padding: "8px 16px", backgroundColor: "#0078d4", color: "white", border: "none", borderRadius: "4px", cursor: (loading || !graphClient) ? "not-allowed" : "pointer" }}
         >
           {loading ? "Sending..." : "Send"}
         </button>

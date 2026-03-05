@@ -42,6 +42,10 @@
       {
         "resource": "Microsoft Graph",
         "scope": "OnlineMeetingTranscript.Read.All"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Reports.Read.All"
       }
     ],
     "metadata": {

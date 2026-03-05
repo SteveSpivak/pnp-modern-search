@@ -1,15 +1,45 @@
 import * as React from "react";
-import { CopilotApiLibrary } from "../../CopilotApiLibrary";
+import { ServiceScope } from "@microsoft/sp-core-library";
+import { MSGraphClientFactory, MSGraphClientV3 } from "@microsoft/sp-http";
 
 export interface ICopilotMeetingInsightsProps {
   meetingId: string;
   userId: string;
+  serviceScope: ServiceScope;
 }
 
-export const CopilotMeetingInsights: React.FC<ICopilotMeetingInsightsProps> = ({ meetingId, userId }) => {
+export const CopilotMeetingInsights: React.FC<ICopilotMeetingInsightsProps> = ({ meetingId, userId, serviceScope }) => {
   const [insights, setInsights] = React.useState<any | null>(null);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | undefined>();
+  const [graphClient, setGraphClient] = React.useState<MSGraphClientV3 | null>(null);
+
+  React.useEffect(() => {
+    let active = true;
+
+    // Initialize MSGraphClient using the provided ServiceScope
+    const initGraphClient = async () => {
+      if (!serviceScope) return;
+
+      try {
+        const msGraphClientFactory = serviceScope.consume(MSGraphClientFactory.serviceKey);
+        const client = await msGraphClientFactory.getClient("3");
+        if (active) {
+          setGraphClient(client);
+        }
+      } catch (err) {
+        console.error("[CopilotMeetingInsights] Failed to initialize Graph Client.", err);
+        if (active) {
+          setError("Failed to initialize Microsoft Graph client.");
+          setLoading(false);
+        }
+      }
+    };
+
+    initGraphClient();
+
+    return () => { active = false; };
+  }, [serviceScope]);
 
   React.useEffect(() => {
     let active = true;
@@ -21,15 +51,14 @@ export const CopilotMeetingInsights: React.FC<ICopilotMeetingInsightsProps> = ({
         return;
       }
 
-      try {
-        const client = CopilotApiLibrary.msGraphClient;
-        if (!client) {
-          throw new Error("Microsoft Graph client is not initialized.");
-        }
+      if (!graphClient) {
+        return;
+      }
 
+      try {
         // Utilizing v1.0 of the Meeting Insights API
         const endpoint = `/users/${userId}/onlineMeetings/${meetingId}/aiInsights`;
-        const response = await client.api(endpoint).version("v1.0").get();
+        const response = await graphClient.api(endpoint).version("v1.0").get();
 
         if (active) {
           setInsights(response);
@@ -49,7 +78,7 @@ export const CopilotMeetingInsights: React.FC<ICopilotMeetingInsightsProps> = ({
     return () => {
       active = false;
     };
-  }, [meetingId, userId]);
+  }, [meetingId, userId, graphClient]);
 
   return (
     <div style={{ padding: "16px", border: "1px solid #ccc", borderRadius: "8px", maxWidth: "400px", fontFamily: "Segoe UI, sans-serif" }}>

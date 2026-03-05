@@ -5,34 +5,22 @@ import { IExtensibilityLibrary, IComponentDefinition, IDataSourceDefinition } fr
 import { CopilotSearchDataSource } from "./dataSources/CopilotSearchDataSource";
 import { CopilotChatComponent } from "./components/chat/CopilotChatComponent";
 import { CopilotMeetingInsightsComponent } from "./components/meetingInsights/CopilotMeetingInsightsComponent";
+import { CopilotUsageReportsComponent } from "./components/usageReports/CopilotUsageReportsComponent";
 
 export class CopilotApiLibrary implements IExtensibilityLibrary {
   /**
-   * Statically store the MSGraphClientV3 instance so components and data sources
-   * can use the exact same initialized client with the current user's delegated permissions.
+   * By keeping a reference to the global ServiceScope provided by PnP Modern Search,
+   * we can pass it down to our Custom Web Components. They can then independently
+   * consume the MSGraphClientFactory inside their React components, avoiding race conditions.
    */
-  public static msGraphClient: MSGraphClientV3;
-
-  /**
-   * Statically store the PageContext for additional SharePoint context if needed.
-   */
-  public static pageContext: PageContext;
+  public static serviceScope: ServiceScope;
 
   public onInit(serviceScope: ServiceScope): void {
-    // ALWAYS initialize Graph/PnPjs or consume services inside whenFinished()
-    // The service scope is not sealed before this callback fires.
-    serviceScope.whenFinished(async () => {
-      CopilotApiLibrary.pageContext = serviceScope.consume(PageContext.serviceKey);
-
-      const msGraphClientFactory = serviceScope.consume(MSGraphClientFactory.serviceKey);
-
-      try {
-        // Initialize the Graph Client for V3 (which supports continuous access evaluation)
-        CopilotApiLibrary.msGraphClient = await msGraphClientFactory.getClient("3");
-        console.log("[CopilotApiLibrary] Successfully initialized MSGraphClientV3.");
-      } catch (err) {
-        console.error("[CopilotApiLibrary] Failed to initialize MSGraphClientV3.", err);
-      }
+    // ALWAYS consume services inside whenFinished() as the ServiceScope is not sealed before this.
+    serviceScope.whenFinished(() => {
+      // We store the serviceScope statically so that Web Components
+      // (which are instantiated by the browser, not by us) can access it.
+      CopilotApiLibrary.serviceScope = serviceScope;
     });
   }
 
@@ -45,6 +33,10 @@ export class CopilotApiLibrary implements IExtensibilityLibrary {
       {
         componentName: "contoso-copilot-meeting-insights",
         componentClass: CopilotMeetingInsightsComponent
+      },
+      {
+        componentName: "contoso-copilot-usage-reports",
+        componentClass: CopilotUsageReportsComponent
       }
     ];
   }
