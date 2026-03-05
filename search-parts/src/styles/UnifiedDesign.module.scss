@@ -257,3 +257,191 @@
     }
   }
 }
+
+/* ============================================================
+   2026 MODERN EDIT MODE & PROPERTY PANE OVERRIDES
+   Rounded, clean, soft shadows, smooth transitions
+============================================================ */
+:global {
+  /* Common Transition */
+  --transition-smooth: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  /* Target Property Pane / Edit Mode Global Containers */
+  .ms-PropertyPane {
+    font-family: var(--font-sans);
+  }
+
+  /* Property Pane Groups / Sections */
+  .ms-PropertyPane-header {
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ms-PropertyPane-group {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    margin: 12px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    transition: var(--transition-smooth);
+  }
+
+  .ms-PropertyPane-groupHeader {
+    font-weight: 700;
+    color: var(--fg);
+    letter-spacing: -0.01em;
+  }
+
+  /* Inputs & Fields (Textfields, Dropdowns, DatePickers) */
+  .ms-TextField-field,
+  .ms-Dropdown-title,
+  .ms-ComboBox-Input {
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--border) !important;
+    background: #f8fafc !important;
+    padding: 8px 12px !important;
+    transition: var(--transition-smooth) !important;
+    font-size: 0.95rem !important;
+  }
+
+  .ms-TextField-field:hover,
+  .ms-Dropdown-title:hover,
+  .ms-ComboBox-Input:hover {
+    background: #ffffff !important;
+    border-color: var(--ring) !important;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.05) !important;
+  }
+
+  .ms-TextField-field:focus,
+  .ms-Dropdown-title:focus,
+  .ms-Dropdown.is-open .ms-Dropdown-title,
+  .ms-ComboBox.is-open .ms-ComboBox-Input {
+    background: #ffffff !important;
+    border-color: var(--gradA) !important;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15) !important;
+    outline: none !important;
+  }
+
+  /* Toggles */
+  .ms-Toggle-background {
+    border-radius: var(--radius-pill) !important;
+    transition: var(--transition-smooth) !important;
+  }
+
+  .ms-Toggle.is-checked .ms-Toggle-background {
+    background: linear-gradient(45deg, var(--gradA), var(--gradB)) !important;
+  }
+
+  .ms-Toggle-thumb {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: var(--transition-smooth) !important;
+  }
+
+  /* Buttons inside Property Pane */
+  .ms-PropertyPane .ms-Button {
+    border-radius: var(--radius-md) !important;
+    transition: var(--transition-smooth) !important;
+    font-weight: 600 !important;
+  }
+
+  .ms-PropertyPane .ms-Button--primary {
+    background: linear-gradient(135deg, var(--gradA), var(--gradB)) !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25) !important;
+  }
+
+  .ms-PropertyPane .ms-Button--primary:hover {
+    box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35) !important;
+    transform: translateY(-1px);
+  }
+
+  /* Labels */
+  .ms-Label {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  /* Checkboxes */
+  .ms-Checkbox-checkbox {
+    border-radius: 6px !important;
+    transition: var(--transition-smooth) !important;
+  }
+
+  .ms-Checkbox.is-checked .ms-Checkbox-checkbox {
+    background: var(--gradA) !important;
+    border-color: var(--gradA) !important;
+  }
+}
+
+/* Optional Icon override globally mapping fabric classes to Lucide lookalikes (if you can't replace the DOM nodes easily) */
+/* Since PnP generates <i class="ms-Icon ms-Icon--Search">, we can mask it with CSS if desired,
+   but it is generally better to just let standard icons inherit colors if Lucide can't be injected into standard Handlebars helpers natively without changing the code deeply. */
+
+
+/* ============================================================
+   ANIMATIONS & TRANSITIONS REFINEMENT
+============================================================ */
+:global {
+  /* Ensure all interactive property pane elements have a smooth default */
+  .ms-Button,
+  .ms-Toggle,
+  .ms-Dropdown-title,
+  .ms-TextField-field,
+  .ms-Checkbox-checkbox,
+  .ms-ChoiceField-field,
+  .ms-Slider-slideBox {
+    transition: var(--transition-smooth) !important;
+  }
+
+  /* Focus rings for accessibility */
+  .ms-Button:focus::after,
+  .ms-Toggle:focus::after,
+  .ms-TextField-field:focus::after {
+    border-color: var(--gradA) !important;
+  }
+}
+
+/* ============================================================
+   FILTERS AND INPUT CONTROLS SOFT SHADOWS & ROUNDING
+============================================================ */
+:global {
+  /* Common inputs inside filters (e.g. date pickers, comboboxes) */
+  .pnp-modern-search .ms-ComboBox-Input,
+  .pnp-modern-search .ms-DatePicker-textField .ms-TextField-field {
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--border) !important;
+    background: #f8fafc !important;
+    transition: var(--transition-smooth) !important;
+  }
+
+  .pnp-modern-search .ms-ComboBox-Input:focus,
+  .pnp-modern-search .ms-DatePicker-textField .ms-TextField-field:focus {
+    border-color: var(--gradA) !important;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15) !important;
+    background: #ffffff !important;
+  }
+
+  /* Make sure dropdown panels inherit the styling */
+  .ms-Dropdown-callout,
+  .ms-ComboBox-callout,
+  .ms-DatePicker-callout {
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-hover) !important;
+    border: 1px solid var(--border) !important;
+    overflow: hidden !important;
+  }
+
+  /* Filter checkbox styling pass */
+  .pnp-modern-search .ms-Checkbox-checkbox {
+    border-radius: 4px !important;
+  }
+  .pnp-modern-search .ms-Checkbox.is-checked .ms-Checkbox-checkbox {
+    background: var(--gradA) !important;
+    border-color: var(--gradA) !important;
+  }
+}
