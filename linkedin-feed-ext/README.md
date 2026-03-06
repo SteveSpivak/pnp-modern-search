@@ -1,73 +1,72 @@
-# linkedin-feed-ext
+# LinkedIn Feed - PnP Modern Search Extensibility
 
-## Summary
+This project provides a Custom Data Source and a Custom Web Component for [PnP Modern Search v4](https://microsoft-search.github.io/pnp-modern-search/), enabling you to display a live LinkedIn feed within SharePoint Online.
 
-Short summary on functionality and used technologies.
+## Important Note on LinkedIn APIs
 
-[picture of the solution in action, if possible]
+LinkedIn actively blocks direct scraping from the browser via CORS policies and authentication requirements.
+**To use this extensibility component, you must host a backend proxy API** (e.g., Azure Function, AWS Lambda, Node.js server) that performs the actual data fetching from LinkedIn and returns JSON to this component.
 
-## Used SharePoint Framework Version
-
-![version](https://img.shields.io/badge/version-1.18.2-green.svg)
-
-## Applies to
-
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-## Prerequisites
-
-> Any special pre-requisites?
-
-## Solution
-
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
-
-## Version history
-
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+This component is configured by default to point to: `https://www.linkedin.com/company/cellebrite/posts/?feedView=all` (as a placeholder), but you must point it to your working proxy API via the Property Pane.
 
 ---
 
-## Minimal Path to Awesome
+## Installation & Deployment Guide
 
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
+### Prerequisites
+* [Node.js v18.17.1+](https://nodejs.org/) (Required for SPFx 1.18.2)
+* Gulp CLI (`npm install -g gulp-cli`)
 
-> Include any additional steps as needed.
+### 1. Build the Package
+Open your terminal, navigate to the `linkedin-feed-ext` folder, and run:
+```bash
+npm install
+gulp bundle --ship
+gulp package-solution --ship
+```
+This will generate the SharePoint package file at: `sharepoint/solution/linkedin-feed-ext.sppkg`.
 
-## Features
+### 2. Deploy to SharePoint App Catalog
+1. Go to your SharePoint Tenant Admin Center > **More features** > **Apps** (App Catalog).
+2. Click **Upload** and select the `linkedin-feed-ext.sppkg` file.
+3. Check the box to **Make this solution available to all sites in the organization** (since `skipFeatureDeployment` is set to true).
+4. Click **Deploy**.
 
-Description of the extension that expands upon high-level summary above.
+### 3. Configure PnP Modern Search
+1. Navigate to the SharePoint site where you have PnP Modern Search installed.
+2. Edit the page and add the **PnP - Search Results** web part.
+3. Open the Property Pane for the Search Results web part.
+4. Go to Page 4: **Extensibility configuration**.
+5. Find the **Extensibility libraries** section and paste the manifest GUID of this library:
+   `4fdd2d20-bb92-4137-9bf1-7327ea4b6bb6` (You can confirm this ID in `config/package-solution.json`).
+6. Click **Add** and **Apply**.
 
-This extension illustrates the following concepts:
+### 4. Setup the Data Source
+1. In the Search Results Property Pane, go to Page 1: **Data source**.
+2. From the dropdown, select **LinkedIn Feed**.
+3. A new field will appear: **API / Proxy URL**. Enter the URL of your backend proxy that returns the LinkedIn JSON feed.
 
-- topic 1
-- topic 2
-- topic 3
+### 5. Setup the Custom Layout
+1. In the Search Results Property Pane, go to Page 2: **Layouts**.
+2. Select **Custom** and click **Edit results template**.
+3. Modify the Handlebars template to loop over the results and use the custom web component tag: `<linkedin-post-card>`.
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
-
-## References
-
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+Example Template:
+```html
+<style>
+  .linkedin-feed-container { display: grid; gap: 16px; }
+</style>
+<div class="linkedin-feed-container">
+  {{#each items}}
+    <linkedin-post-card
+      data-author-name="{{authorName}}"
+      data-author-title="{{authorTitle}}"
+      data-post-text="{{postText}}"
+      data-image-url="{{imageUrl}}"
+      data-post-url="{{postUrl}}"
+      data-date="{{date}}">
+    </linkedin-post-card>
+  {{/each}}
+</div>
+```
+*(Make sure the attributes map exactly to the JSON keys returned by your proxy API).*
