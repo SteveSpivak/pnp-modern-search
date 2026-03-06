@@ -1,0 +1,1455 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/extensibility/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Extensibility - PnP Modern Search (v4)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"";--md-code-font-family:"Ubuntu Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#extensibility-possibilities" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PnP Modern Search (v4)" class="md-header__button md-logo" aria-label="PnP Modern Search (v4)" data-md-component="logo">
+      
+  <img src="../assets/pnp_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PnP Modern Search (v4)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Extensibility
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/microsoft-search/pnp-modern-search/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usage/search-results/" class="md-tabs__link">
+        Search Results
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usage/search-filters/" class="md-tabs__link">
+        Search Filters
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usage/search-verticals/" class="md-tabs__link">
+        Search Verticals
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usage/search-box/" class="md-tabs__link">
+        Search Box
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Extensibility
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PnP Modern Search (v4)" class="md-nav__button md-logo" aria-label="PnP Modern Search (v4)" data-md-component="logo">
+      
+  <img src="../assets/pnp_logo.png" alt="logo">
+
+    </a>
+    PnP Modern Search (v4)
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/microsoft-search/pnp-modern-search/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenarios/" class="md-nav__link">
+        Scenario tutorials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-custom-layouts/" class="md-nav__link">
+        Create custom layouts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-contribute/" class="md-nav__link">
+        How to contribute?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build-the-doc/" class="md-nav__link">
+        Building documentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v3/" class="md-nav__link">
+        Version 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Search Results
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Results" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Search Results
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-results/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-results/data-sources/" class="md-nav__link">
+        Data sources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-results/slots/" class="md-nav__link">
+        Slots
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-results/tokens/" class="md-nav__link">
+        Tokens
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-results/layouts/" class="md-nav__link">
+        Layouts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-results/connections/" class="md-nav__link">
+        Connections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Extensibility
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Extensibility
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-customizations" class="md-nav__link">
+    Basic customizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-customizations" class="md-nav__link">
+    Advanced customizations
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequistes" class="md-nav__link">
+    Prerequistes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-extensions" class="md-nav__link">
+    Supported extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-your-extensibility-library-with-a-web-part" class="md-nav__link">
+    Register your extensibility library with a Web Part
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-extensibility-library" class="md-nav__link">
+    Create an extensibility library
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an extensibility library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-a-library-component" class="md-nav__link">
+    Debug a library component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-sharepoint-framework-context-and-services-in-a-library-component" class="md-nav__link">
+    Accessing the SharePoint Framework context and services in a library component
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Search Filters
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Filters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Search Filters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-filters/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-filters/layouts/" class="md-nav__link">
+        Layouts
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Search Verticals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Verticals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Search Verticals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-verticals/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Search Box
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Box" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Search Box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/search-box/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        Extensibility
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extensibility" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Extensibility
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Extensibility
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Extensibility
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-customizations" class="md-nav__link">
+    Basic customizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-customizations" class="md-nav__link">
+    Advanced customizations
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequistes" class="md-nav__link">
+    Prerequistes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-extensions" class="md-nav__link">
+    Supported extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-your-extensibility-library-with-a-web-part" class="md-nav__link">
+    Register your extensibility library with a Web Part
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-extensibility-library" class="md-nav__link">
+    Create an extensibility library
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an extensibility library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-a-library-component" class="md-nav__link">
+    Debug a library component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-sharepoint-framework-context-and-services-in-a-library-component" class="md-nav__link">
+    Accessing the SharePoint Framework context and services in a library component
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="templating/" class="md-nav__link">
+        Templating
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_layout/" class="md-nav__link">
+        Custom layout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_web_component/" class="md-nav__link">
+        Custom web component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_suggestions_provider/" class="md-nav__link">
+        Custom suggestions provider
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="handlebars_customizations/" class="md-nav__link">
+        Custom Handlebars customizations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="adaptivecards_customizations/" class="md-nav__link">
+        Custom event handlers for adaptive cards actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_data_sources/" class="md-nav__link">
+        Custom data sources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_query_modifications/" class="md-nav__link">
+        Custom query modifier
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extensibility_compatibility_matrix/" class="md-nav__link">
+        Compatibility matrix
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-customizations" class="md-nav__link">
+    Basic customizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-customizations" class="md-nav__link">
+    Advanced customizations
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequistes" class="md-nav__link">
+    Prerequistes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-extensions" class="md-nav__link">
+    Supported extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-your-extensibility-library-with-a-web-part" class="md-nav__link">
+    Register your extensibility library with a Web Part
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-extensibility-library" class="md-nav__link">
+    Create an extensibility library
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an extensibility library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-a-library-component" class="md-nav__link">
+    Debug a library component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-sharepoint-framework-context-and-services-in-a-library-component" class="md-nav__link">
+    Accessing the SharePoint Framework context and services in a library component
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/microsoft-search/pnp-modern-search/blob/develop/docs/extensibility/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="extensibility-possibilities">Extensibility possibilities<a class="headerlink" href="#extensibility-possibilities" title="Permanent link">&para;</a></h1>
+<p>This solution supports different levels of customizations depending your requirements:</p>
+<ul>
+<li><strong>'Basic' customizations</strong>: these include custom settings for data sources, search box, verticals and filters Web Parts + minor updates to existing layouts by adding custom HTML markup (ex: add a custom field in the UI from a data source), updates to builtin layouts fields ('Cards','Details List' and 'People'), etc. <strong>They only require HTML, CSS and Handlebars skills to be done</strong>. Typically a super user or a webmaster could do that.</li>
+<li><strong>'Advanced' customizations</strong>: these include major updates like adding a new data source, layout, component or suggestions provider. <strong>These are build from scratch and require SharePoint Framework development skills to be done</strong>. Typically, a front-end/SharePoint developer could do that.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Extensibility samples are centralized in a dedicated repository: <a href="https://github.com/microsoft-search/pnp-modern-search-extensibility-samples/tree/main">https://github.com/microsoft-search/pnp-modern-search-extensibility-samples/tree/main</a></p>
+</div>
+<h2 id="basic-customizations">Basic customizations<a class="headerlink" href="#basic-customizations" title="Permanent link">&para;</a></h2>
+<p>'Basic' customizations cover the layout templates updates with HTML, CSS and Handlebars. Refer to the templating <a href="templating/">documentation</a> to know more.</p>
+<h2 id="advanced-customizations">Advanced customizations<a class="headerlink" href="#advanced-customizations" title="Permanent link">&para;</a></h2>
+<p>The solution uses the concept of <strong>'extensibility libraries'</strong>. Basically, these are <a href="https://docs.microsoft.com/en-us/sharepoint/dev/spfx/library-component-tutorial">SharePoint Framework library components</a> you put in the global or site collection app catalog that will be loaded automatically by Web Parts to enhance the experience and options (ex: new data source with new options, custom layout, etc.). Simple as that!</p>
+<blockquote>
+<p>As a demonstration of capabilities, all builtin data sources, layouts, web components or suggestions providers are built using <strong>the same exact interfaces and methods</strong> that are publicly available in the <code>@pnp/modern-search-extensibility</code> SPFx library project.</p>
+<p>All documentation procedures for extensions are based on the demo extensibility library available in the same repository that you can use as reference.</p>
+</blockquote>
+<h3 id="prerequistes">Prerequistes<a class="headerlink" href="#prerequistes" title="Permanent link">&para;</a></h3>
+<p>For your project to be a valid extensibility library, you must have the following prerequisites:</p>
+<ul>
+<li>Your project must be an <a href="https://docs.microsoft.com/en-us/sharepoint/dev/spfx/library-component-overview">SPFx library component</a>.</li>
+<li>The main entry point of your library must implement the <code>IExtensibilityLibrary</code> interface from the <code>@pnp/modern-search-extensibility</code> library.</li>
+<li>You library <strong>manifest ID</strong> must be registered in the Web Part where you want to use the extension.</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">SPFx version</p>
+<p>The SPFx library project must use the same SPFx version as the main solution (check <a href="extensibility_compatibility_matrix/">compatibility matrix</a>). Owherwise you may face issues at build time. See <a href="https://github.com/microsoft-search/pnp-modern-search/issues/1893">GitHub issue #1893</a></p>
+</div>
+<h3 id="supported-extensions">Supported extensions<a class="headerlink" href="#supported-extensions" title="Permanent link">&para;</a></h3>
+<p>Each Web Part type in the solution supports several extensions or no extension at all. It means even your extensibility library contains all possible extensions, they won't be loaded if the Web Part does not support them.</p>
+<table>
+<thead>
+<tr>
+<th>Web Part type</th>
+<th>Supported extensions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Search Results</strong></td>
+<td><ul><li>Custom web components.</li><li>Custom Handlebars <a href="https://handlebarsjs.com/api-reference/runtime.html">customizations</a> (ex: helpers, partials ,etc.).</li><li>Custom event handlers for adaptive cards actions</li><li>Custom Data Sources</li><li>Custom query modifier</li></ul></td>
+</tr>
+<tr>
+<td><strong>Search Filters</strong></td>
+<td><ul><li>Custom web components (<em>not directly but via the 'Search Results' Web Part extensibility library registration</em>).</li></ul></td>
+</tr>
+<tr>
+<td><strong>Search box</strong></td>
+<td><ul><li>Custom suggestions providers.</li></ul></td>
+</tr>
+<tr>
+<td><strong>Search Verticals</strong></td>
+<td>None.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="register-your-extensibility-library-with-a-web-part">Register your extensibility library with a Web Part<a class="headerlink" href="#register-your-extensibility-library-with-a-web-part" title="Permanent link">&para;</a></h3>
+<p>When a Web Part type supports one or multiple extensions, you can register them going to the last property pane confguration page in the <em>'Extensibility configuration'</em> section:</p>
+<p><a href="../assets/extensibility/extensibility_configuration.png"><img alt="&quot;Extensibility configuration&quot;" class="center" src="../assets/extensibility/extensibility_configuration.png" /></a></p>
+<p>From here, you can add the manifest IDs of your libraries and decide to enable or disabled certain libraries. The manifest ID can be found in the <code>&lt;your_library_name&gt;.manifest.json</code> file:</p>
+<p><a href="../assets/extensibility/library_manifest_id.png"><img alt="&quot;Library manifest ID&quot;" class="center" src="../assets/extensibility/library_manifest_id.png" /></a></p>
+<p><a href="../assets/extensibility/extensibility_configuration_manifest.png"><img alt="&quot;Extensibility manifests registration&quot;" class="center" src="../assets/extensibility/extensibility_configuration_manifest.png" /></a></p>
+<blockquote>
+<p>Multiple librairies can be registered for a single Web Part instance allowing you to split your extensions into multiple projects (in the end, they will be all concatenated). For instance, this could be convenient when extensions come from different IT providers.</p>
+</blockquote>
+<h3 id="create-an-extensibility-library">Create an extensibility library<a class="headerlink" href="#create-an-extensibility-library" title="Permanent link">&para;</a></h3>
+<p>To create an extensibility library, you have the choice to reuse the one provided in the GitHub repository or start from scratch. In this case:</p>
+<ol>
+<li>Create a new SharePoint Framework project of type 'Library' with <code>yo @microsoft/sharepoint</code>.</li>
+<li>Add an npm reference to <code>@pnp/modern-search-extensibility</code> library using <code>npm i @pnp/modern-search-extensibility --save</code> cmd.</li>
+<li>Install npm-package <code>html-loader</code> as a dev-dependency using <code>npm i html-loader@4.2.0 --save-dev</code></li>
+<li>
+<p>Insert the following lines of code into <code>gulpfile.js</code> of your SPFx-project
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">envCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">build</span><span class="p">.</span><span class="nx">subTask</span><span class="p">(</span><span class="s1">&#39;environmentCheck&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">gulp</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">build</span><span class="p">.</span><span class="nx">configureWebpack</span><span class="p">.</span><span class="nx">mergeConfig</span><span class="p">({</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nx">additionalConfiguration</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">generatedConfiguration</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">          </span><span class="c1">// Remove the default html rule</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">          </span><span class="nx">generatedConfiguration</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">rules</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generatedConfiguration</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">rules</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">rule</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="nx">rule</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;/\\.html$/&#39;</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">          </span><span class="p">});</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">          </span><span class="c1">// Add html loader without minimize so that we can use it for handlebars templates</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">          </span><span class="nx">generatedConfiguration</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">rules</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="nx">test</span><span class="o">:</span><span class="w"> </span><span class="sr">/\.html$/</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="nx">loader</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;html-loader&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">              </span><span class="nx">minimize</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="p">});</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="nx">generatedConfiguration</span><span class="p">;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nx">done</span><span class="p">();</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">});</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="nx">build</span><span class="p">.</span><span class="nx">rig</span><span class="p">.</span><span class="nx">addPreBuildTask</span><span class="p">(</span><span class="nx">envCheck</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>In the main entry point, implement the <code>IExtensibilityLibrary</code> interface. Provide all method implementations (return empty arrays if you don't implement specific extensions).
+    <img alt="&quot;Extensibility interface implementation&quot;" class="center" src="../assets/extensibility/implement_interface.png" /></p>
+</li>
+<li>
+<p>Implement your extension(s) depending of the type:</p>
+<ul>
+<li><a href="custom_layout/">Layout</a></li>
+<li><a href="custom_web_component/">Web component</a></li>
+<li><a href="custom_suggestions_provider/">Suggestions providers</a></li>
+<li><a href="handlebars_customizations/">Handlebars customizations</a>    </li>
+<li><a href="adaptivecards_customizations/">Adaptive Cards Actions handlers</a></li>
+<li><a href="custom_query_modifications/">Query modifier</a></li>
+<li><a href="custom_data_sources/">Data Sources</a></li>
+</ul>
+<p>Creation process always follows more or less the same pattern:</p>
+<ol>
+<li>Create the extension data logic or render logic.</li>
+<li>Register the information about the extension to be discovered and instanciated by the target Web Part by implementing the corresponding method according to the <code>IExtensibilityLibrary</code> interface.</li>
+</ol>
+</li>
+<li>
+<p>Bundle <code>gulp bundle --ship</code> and package <code>gulp package-solution --ship</code> and add the solution to the global or site collection catalog (for this one, it must be the same site collection where the Web Part loading that extension(s) is present).</p>
+</li>
+<li><a href="#register-your-extensibility-library-with-a-web-part">Register your manifest ID in the target Web Part instance</a>.</li>
+<li>Enjoy!</li>
+</ol>
+<h4 id="debug-a-library-component">Debug a library component<a class="headerlink" href="#debug-a-library-component" title="Permanent link">&para;</a></h4>
+<p>Debugging a library component is exactly the same as debugging an SPFx Web Part. Run <code>gulp serve</code> in the hosted workbench and put a <em>'Search Results'</em>,<em>'Search Filters'</em> or <em>'Search Box'</em> Web Part depending the extension you want to test. If registered correctly, your breakpoints will be triggerred by the main Web Part loading your extension.</p>
+<h4 id="accessing-the-sharepoint-framework-context-and-services-in-a-library-component">Accessing the SharePoint Framework context and services in a library component<a class="headerlink" href="#accessing-the-sharepoint-framework-context-and-services-in-a-library-component" title="Permanent link">&para;</a></h4>
+<p>In case you need to access the SharePoint Framework context and services, within your custom library component, you can easily do that by relying on the Service Locator pattern available in SPFx.
+You simply need to declare a public static property with name <code>serviceKey</code> in your library component and provide a constructor that accepts a <a href="https://docs.microsoft.com/en-us/javascript/api/sp-core-library/servicescope?view=sp-typescript-latest"><code>ServiceScope</code></a> instance as input argument.
+For example, here you can see a code excerpt of such a library component that handles custom actions for Adaptive Cards rendering:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IAdaptiveCardAction</span><span class="p">,</span><span class="w"> </span><span class="nx">IComponentDefinition</span><span class="p">,</span><span class="w"> </span><span class="nx">IExtensibilityLibrary</span><span class="p">,</span><span class="w"> </span><span class="nx">ILayoutDefinition</span><span class="p">,</span><span class="w"> </span><span class="nx">ISuggestionProviderDefinition</span><span class="p">,</span><span class="w"> </span><span class="nx">IQueryModifierDefinition</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@pnp/modern-search-extensibility&#39;</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ServiceKey</span><span class="p">,</span><span class="w"> </span><span class="nx">ServiceScope</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@microsoft/sp-core-library&#39;</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SPHttpClient</span><span class="p">,</span><span class="w"> </span><span class="nx">SPHttpClientResponse</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@microsoft/sp-http&#39;</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PageContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@microsoft/sp-page-context&#39;</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">MyCustomLibraryComponent</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">IExtensibilityLibrary</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">serviceKey</span><span class="o">:</span><span class="w"> </span><span class="kt">ServiceKey</span><span class="o">&lt;</span><span class="nx">MyCustomLibraryComponent</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nx">ServiceKey</span><span class="p">.</span><span class="nx">create</span><span class="o">&lt;</span><span class="nx">MyCustomLibraryComponent</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;SPFx:MyCustomLibraryComponent&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">MyCustomLibraryComponent</span><span class="p">);</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="nx">_spHttpClient</span><span class="o">:</span><span class="w"> </span><span class="kt">SPHttpClient</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="nx">_pageContext</span><span class="o">:</span><span class="w"> </span><span class="kt">PageContext</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="nx">_currentWebUrl</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">serviceScope</span><span class="o">:</span><span class="w"> </span><span class="kt">ServiceScope</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nx">serviceScope</span><span class="p">.</span><span class="nx">whenFinished</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">_spHttpClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">serviceScope</span><span class="p">.</span><span class="nx">consume</span><span class="p">(</span><span class="nx">SPHttpClient</span><span class="p">.</span><span class="nx">serviceKey</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">_pageContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">serviceScope</span><span class="p">.</span><span class="nx">consume</span><span class="p">(</span><span class="nx">PageContext</span><span class="p">.</span><span class="nx">serviceKey</span><span class="p">);</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">_currentWebUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_pageContext</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">absoluteUrl</span><span class="p">;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">getCustomLayouts</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">ILayoutDefinition</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">getCustomWebComponents</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">IComponentDefinition</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">getCustomSuggestionProviders</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">ISuggestionProviderDefinition</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">registerHandlebarsCustomizations</span><span class="o">?</span><span class="p">(</span><span class="nx">handlebarsNamespace</span><span class="o">:</span><span class="w"> </span><span class="kt">typeof</span><span class="w"> </span><span class="nx">Handlebars</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">getCustomQueryModifiers</span><span class="o">?</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">IQueryModifierDefinition</span><span class="p">[]{</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">invokeCardAction</span><span class="p">(</span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="kt">IAdaptiveCardAction</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span><span class="c1">// Process the action based on type</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Action.OpenUrl&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">      </span><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;_blank&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Action.Submit&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">      </span><span class="c1">// Process the Submit action based on title</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">      </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="o">:</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">          </span><span class="c1">// Invoke the currentUser endpoint</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="nx">_spHttpClient</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">            </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">_currentWebUrl</span><span class="si">}</span><span class="sb">/_api/web/currentUser`</span><span class="p">,</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="w">            </span><span class="nx">SPHttpClient</span><span class="p">.</span><span class="nx">configurations</span><span class="p">.</span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="w">            </span><span class="kc">null</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="o">:</span><span class="w"> </span><span class="kt">SPHttpClientResponse</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="w">            </span><span class="p">});</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="w">          </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="w">        </span><span class="nx">default</span><span class="o">:</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="w">          </span><span class="kt">console.log</span><span class="p">(</span><span class="s1">&#39;Action not supported!&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="w">          </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">getCustomDataSources</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">IDataSourceDefinition</span><span class="p">[]</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a><span class="w">          </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Custom Data Source&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="w">          </span><span class="nx">iconName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Database&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a><span class="w">          </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;CustomDataSource&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a><span class="w">          </span><span class="nx">serviceKey</span><span class="o">:</span><span class="w"> </span><span class="kt">ServiceKey.create</span><span class="o">&lt;</span><span class="nx">IDataSource</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;CustomDataSource&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">CustomDataSource</span><span class="p">)</span>
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="w">    </span><span class="p">];</span>
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a><span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nx">name</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;MyCustomLibraryComponent&#39;</span><span class="p">;</span>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a><span class="p">}</span>
+</code></pre></div>
+<p>In order to run the above sample code, you will need to import in your library the following npm packages: <code>@microsoft/sp-component-base</code>, <code>@microsoft/sp-core-library</code>, and <code>@microsoft/sp-webpart-base</code>.  </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../usage/search-box/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Usage" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Usage
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="templating/" class="md-footer__link md-footer__link--next" aria-label="Next: Templating" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Templating
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/m365pnp" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://microsoft-search.github.io/pnp-modern-search/" target="_blank" rel="noopener" title="microsoft-search.github.io" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "instant"], "search": "../assets/javascripts/workers/search.709b4209.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1581 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/usage/search-results/layouts/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Layouts - PnP Modern Search (v4)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"";--md-code-font-family:"Ubuntu Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#builtin-layouts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="PnP Modern Search (v4)" class="md-header__button md-logo" aria-label="PnP Modern Search (v4)" data-md-component="logo">
+      
+  <img src="../../../assets/pnp_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PnP Modern Search (v4)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Layouts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/microsoft-search/pnp-modern-search/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Search Results
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../search-filters/" class="md-tabs__link">
+        Search Filters
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../search-verticals/" class="md-tabs__link">
+        Search Verticals
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../search-box/" class="md-tabs__link">
+        Search Box
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../extensibility/" class="md-tabs__link">
+        Extensibility
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="PnP Modern Search (v4)" class="md-nav__button md-logo" aria-label="PnP Modern Search (v4)" data-md-component="logo">
+      
+  <img src="../../../assets/pnp_logo.png" alt="logo">
+
+    </a>
+    PnP Modern Search (v4)
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/microsoft-search/pnp-modern-search/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scenarios/" class="md-nav__link">
+        Scenario tutorials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../create-custom-layouts/" class="md-nav__link">
+        Create custom layouts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-contribute/" class="md-nav__link">
+        How to contribute?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../build-the-doc/" class="md-nav__link">
+        Building documentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v3/" class="md-nav__link">
+        Version 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Search Results
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Results" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Search Results
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-sources/" class="md-nav__link">
+        Data sources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slots/" class="md-nav__link">
+        Slots
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokens/" class="md-nav__link">
+        Tokens
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Layouts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Layouts
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#builtin-layouts" class="md-nav__link">
+    Builtin layouts
+  </a>
+  
+    <nav class="md-nav" aria-label="Builtin layouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cards" class="md-nav__link">
+    Cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-list" class="md-nav__link">
+    Details List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slider" class="md-nav__link">
+    Slider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-list" class="md-nav__link">
+    Simple list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#people" class="md-nav__link">
+    People
+  </a>
+  
+    <nav class="md-nav" aria-label="People">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persona-hover-card" class="md-nav__link">
+    Persona hover card
+  </a>
+  
+    <nav class="md-nav" aria-label="Persona hover card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-graph-toolkit" class="md-nav__link">
+    Microsoft Graph Toolkit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom" class="md-nav__link">
+    Custom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-settings" class="md-nav__link">
+    Common settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Common settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#result-types" class="md-nav__link">
+    Result types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connections/" class="md-nav__link">
+        Connections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/" class="md-nav__link">
+        Extensibility
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Search Filters
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Filters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Search Filters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search-filters/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search-filters/layouts/" class="md-nav__link">
+        Layouts
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Search Verticals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Verticals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Search Verticals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search-verticals/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Search Box
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Box" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Search Box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search-box/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Extensibility
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extensibility" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Extensibility
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/" class="md-nav__link">
+        Extensibility
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/templating/" class="md-nav__link">
+        Templating
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/custom_layout/" class="md-nav__link">
+        Custom layout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/custom_web_component/" class="md-nav__link">
+        Custom web component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/custom_suggestions_provider/" class="md-nav__link">
+        Custom suggestions provider
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/handlebars_customizations/" class="md-nav__link">
+        Custom Handlebars customizations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/adaptivecards_customizations/" class="md-nav__link">
+        Custom event handlers for adaptive cards actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/custom_data_sources/" class="md-nav__link">
+        Custom data sources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/custom_query_modifications/" class="md-nav__link">
+        Custom query modifier
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensibility/extensibility_compatibility_matrix/" class="md-nav__link">
+        Compatibility matrix
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#builtin-layouts" class="md-nav__link">
+    Builtin layouts
+  </a>
+  
+    <nav class="md-nav" aria-label="Builtin layouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cards" class="md-nav__link">
+    Cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-list" class="md-nav__link">
+    Details List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slider" class="md-nav__link">
+    Slider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-list" class="md-nav__link">
+    Simple list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#people" class="md-nav__link">
+    People
+  </a>
+  
+    <nav class="md-nav" aria-label="People">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persona-hover-card" class="md-nav__link">
+    Persona hover card
+  </a>
+  
+    <nav class="md-nav" aria-label="Persona hover card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-graph-toolkit" class="md-nav__link">
+    Microsoft Graph Toolkit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom" class="md-nav__link">
+    Custom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-settings" class="md-nav__link">
+    Common settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Common settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#result-types" class="md-nav__link">
+    Result types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/microsoft-search/pnp-modern-search/blob/develop/docs/usage/search-results/layouts/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Layouts</h1>
+                
+                <h2 id="builtin-layouts">Builtin layouts<a class="headerlink" href="#builtin-layouts" title="Permanent link">&para;</a></h2>
+<p>By default, the following layouts are provided:</p>
+<p><img alt="&quot;Available layouts&quot;" class="center" src="../../../assets/webparts/search-results/layouts/available_layouts.png" /></p>
+<blockquote>
+<p>Be careful, when you switch the layout in the property pane, all the previous layout properties are lost. We do this to avoid polluting the Web Part property bag with multiple useless configurations.</p>
+</blockquote>
+<h3 id="cards">Cards<a class="headerlink" href="#cards" title="Permanent link">&para;</a></h3>
+<p>The 'cards' layout allows you to display items as tiles, just like the native 'Highlighted Content' SharePoint Web Part.</p>
+<p><img alt="&quot;Cards layout&quot;" class="center" src="../../../assets/webparts/search-results/layouts/cards_layout.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Manage card fields</strong></td>
+<td>Allows you to define you own values for card placeholder fields. By default, the document card fields come with predefined mappings but you can set your own.<br><p align="center"><a href="../../../assets/webparts/search-results/layouts/manage_cards_fields.png"><img alt="&quot;Manage card fields&quot;" src="../../../assets/webparts/search-results/layouts/manage_cards_fields.png" /></a></p> As a field value, you can choose either a field property value (from the list or as free text) and without any transformation or use an Handlebars expression by clicking on the checkbox next to it. In this case, all helpers from the main template are available. Also, if the field doesn't have the <strong>'Allow HTML'</strong> indication flag enabled, it means the value will be always interpreted as text, regardless if you set an HTML value. Otherwise, your value will be interpreted as HTML for those fields (ex: '<em>Location</em>' and '<em>Tags</em>' placeholder fields). For HTML fields you can use the special variable <code>@root.theme</code> to use theme colors (ex: <code>@root.theme.palette.themePrimary</code>) or <code>@root.slots.&lt;SlotName&gt;</code> to access slot value. If you don't set a value for those fields (i.e an empty value), they won't appear in the UI:</br><p align="center"><a href="../../../assets/webparts/search-results/layouts/card_allow_html.png"><img alt="&quot;Card Allow HTML&quot;" src="../../../assets/webparts/search-results/layouts/card_allow_html.png" /></a></p>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Enable result preview</strong></td>
+<td>If enabled, display a callout with an interactive preview of the document based on the value specified value for the <code>PreviewUrl</code> current data source <a href="../slots/">slot</a>.</br> <p align="center"><a href="../../../assets/webparts/search-results/layouts/card_preview.png"><img alt="&quot;Card Preview&quot;" src="../../../assets/webparts/search-results/layouts/card_preview.png" /></a></p></td>
+<td>False.</td>
+</tr>
+<tr>
+<td><strong>Show file icon</strong></td>
+<td>Hide or display the file icon for the result card. The file icon is determined using the <code>FileType</code> <a href="../slots/">slot</a>.</td>
+<td>True.</td>
+</tr>
+<tr>
+<td><strong>Compact mode</strong></td>
+<td>Display cards as compact.</td>
+<td>False.</td>
+</tr>
+<tr>
+<td><strong>Preferred number of cards per row</strong></td>
+<td>Specify the <strong>preferred</strong> number of cards to display per row <strong>when the required width space is available</strong>. The Web Part will always adjust the number of possible tiles to display depending the available width. It means that if you set this value to '3' but you display the Web Part in small column, only 1 tile will be displayed.</td>
+<td>3.</td>
+</tr>
+<tr>
+<td><strong>Enable download</strong></td>
+<td>Enable download of selected files. Requires <em>Allow items selection</em> to be enabled and supports both single and multiple selection. If single selection is enabled the selected file will be downloaded as is. If multiple selection is enabled the selected files and folders will be downloaded in a single zip file like in SharePoint document libraries. Requires <em>SPWebUrl</em>, <em>ContentTypeId</em>, <em>NormListID</em> and <em>NormUniqueID</em> to be selected in <em>Selected properties</em>.</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="details-list">Details List<a class="headerlink" href="#details-list" title="Permanent link">&para;</a></h3>
+<p>The 'details list' layout allows you to display items as a structured list, the same way as a SharePoint document library or list.</p>
+<p><img alt="&quot;Details list layout&quot;" class="center" src="../../../assets/webparts/search-results/layouts/details_list_layout.png" /> </p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Manage columns</strong></td>
+<td>Allows you to build you own table view by adding or removing columns dynamically. For each column, you get the following options:<br><p align="center"><a href="../../../assets/webparts/search-results/layouts/details_list_fields.png"><img alt="&quot;Manage columns&quot;" src="../../../assets/webparts/search-results/layouts/details_list_fields.png" /></a></p><ul><li><strong>Sort order</strong>: the order of the column in the table.</li><li><strong>Column name</strong>: the column friendly name to display.</li><li><strong>Column value</strong>: you can choose here from the list of Selected Properties, without any transformation or use an Handlebars expression by clicking on the checkbox next to it. In this case, all Handlebars helpers from the main template are available and you can also add you own HTML markup in the column value. For HTML fields you can use the special variable <code>@root.theme</code> to use theme colors (ex: <code>@root.theme.palette.themePrimary</code>).<br>You can specify a different field for sorting when using an Handlebars expression by specifying the field from the separate dropdown.<br><img alt="Handlebars Expression" src="../../../assets/webparts/search-results/layouts/details_list_hb_expr.png" /><br><br><img alt="Handlebars Expression 2" src="../../../assets/webparts/search-results/layouts/details_list_hb_expr2.png" /></li><li><strong>Minimum width in px</strong>: the minimum width of the column in pixels.</li><li><strong>Maximum width in px</strong>: the maximum width of the column in pixels.</li><li><strong>Sortable</strong>: allows you to sort column values according to the <strong>data source sort settings</strong>. It means you must first configure the sort setting at data source level with option <em>'User sort'</em> to <code>true</code> to see them in the details list columns configuration. Sort is perfromed one column at a time.</li><li><strong>Resizable</strong>: allows you to resize the column dynamically in display mode.</li><li><strong>Multiline</strong>: if the column column should be multiline. By default only ellipsis (...) will be display for larger text.</li></ul></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show file icon</strong></td>
+<td>Hide or display the file icon in the first column.</td>
+<td>True.</td>
+</tr>
+<tr>
+<td><strong>Compact mode</strong></td>
+<td>Display the details list in compact mode.</td>
+<td>False.</td>
+</tr>
+<tr>
+<td><strong>Enable grouping</strong></td>
+<td>Display a grouped list, grouped by the specified column. You may also specify a list of additional columns to group by in a hierarchy of groups.</td>
+<td>False.</td>
+</tr>
+<tr>
+<td><strong>Enable sticky header</strong></td>
+<td>Display the details list with a sticky header that will stay in place when scrolling. Specify the desired height for the view (in pixels) and then specify the desired items per page in <em>Number of items per page</em> under <em>Paging options</em> and all items on the page will be scrollable within the view.</td>
+<td>False.</td>
+</tr>
+<tr>
+<td><strong>Enable download</strong></td>
+<td><strong>Documents:</strong><br>Enable download of selected files. Requires <em>Allow items selection</em> to be enabled and supports both single and multiple selection. If single selection is enabled the selected file will be downloaded as is. If multiple selection is enabled the selected files and folders will be downloaded in a single zip file like in SharePoint document libraries. Requires <em>SPWebUrl</em>, <em>ContentTypeId</em>, <em>NormListID</em> and <em>NormUniqueID</em> to be selected in <em>Selected properties</em>. <br><strong>ListItems:</strong><br>If the selected items are list items, the values in the columns will be exported to a CSV file, and each column will be seperated by a semi colon <br> If the selection is a mix of documents and list items , or contains other kinds of content, like Sites, then the download button is NOT shown</td>
+<td>False.</td>
+</tr>
+<tr>
+<td><strong>Use Alternating Background color</strong></td>
+<td>Enables the use of alternating background color.The alternating background color is set to themeVariant.semanticColors.bodyBackgroundChecked, and it can not be changed in the web part properties.<br><br><img alt="Alternating background color" src="../../../assets/webparts/search-results/layouts/Details-List-Alternating-background-color.png" /></td>
+<td>False.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link">&para;</a></h3>
+<p>The 'slider' layout allows you to display data as as dynamic slider (i.e caroussel).</p>
+<p><img alt="&quot;Slider layout&quot;" class="center" src="../../../assets/webparts/search-results/layouts/slider_layout.png" /> </p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auto play</strong></td>
+<td>If enabled, slides move automatically every X seconds.</td>
+<td>True.</td>
+</tr>
+<tr>
+<td><strong>Auto play duration</strong></td>
+<td>Move elements every X seconds.</td>
+<td>3 seconds.</td>
+</tr>
+<tr>
+<td><strong>Pause on hover</strong></td>
+<td>If enabled, pause the slider on mouse hover.</td>
+<td>True.</td>
+</tr>
+<tr>
+<td><strong>Number of elements to group together in slides</strong></td>
+<td>Groups cells together in slides.</td>
+<td>3.</td>
+</tr>
+<tr>
+<td><strong>Show page dots</strong></td>
+<td>Enable or disable slider navigation.</td>
+<td>True.</td>
+</tr>
+<tr>
+<td><strong>Infinite scrolling</strong></td>
+<td>Enable or disable infinite scrolling on the carousel.</td>
+<td>False.</td>
+</tr>
+<tr>
+<td><strong>Slide height (in px)</strong></td>
+<td>Dynamically set the slides height to adjust your results.</td>
+<td>360px.</td>
+</tr>
+<tr>
+<td><strong>Slide width (in px)</strong></td>
+<td>Dynamically set the slides width to adjust your results.</td>
+<td>318px.</td>
+</tr>
+<tr>
+<td><strong>Enable download</strong></td>
+<td>Enable download of selected files. Requires <em>Allow items selection</em> to be enabled and supports both single and multiple selection. If single selection is enabled the selected file will be downloaded as is. If multiple selection is enabled the selected files and folders will be downloaded in a single zip file like in SharePoint document libraries. Requires <em>SPWebUrl</em>, <em>ContentTypeId</em>, <em>NormListID</em> and <em>NormUniqueID</em> to be selected in <em>Selected properties</em>.</td>
+<td>False.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="simple-list">Simple list<a class="headerlink" href="#simple-list" title="Permanent link">&para;</a></h3>
+<p>The 'simple list' layout display items as a simple list with larger rows, like a search engine results display.</p>
+<p><img alt="&quot;Simple list layout&quot;" center="center" src="../../../assets/webparts/search-results/layouts/simple_list_layout.png" /> </p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Show file icon</strong></td>
+<td>Hide or display the file icon for the result card. The file icon is determined using the <code>FileType</code> <a href="../slots/">slot</a>.</td>
+<td>True.</td>
+</tr>
+<tr>
+<td><strong>Show thumbnail</strong></td>
+<td>If enabled, display a thumbnail for the itme + a callout with an interactive preview of the document on click based on the value specified value for the <code>PreviewUrl</code> current data source <a href="../slots/">slot</a>.</br> <p align="center"><a href="../../../assets/webparts/search-results/layouts/simple_list_thumbnail.png"><img alt="&quot;Card Preview&quot;" src="../../../assets/webparts/search-results/layouts/simple_list_thumbnail.png" /></a></p></td>
+<td>False.</td>
+</tr>
+<tr>
+<td><strong>Enable download</strong></td>
+<td>Enable download of selected files. Requires <em>Allow items selection</em> to be enabled and supports both single and multiple selection. If single selection is enabled the selected file will be downloaded as is. If multiple selection is enabled the selected files and folders will be downloaded in a single zip file like in SharePoint document libraries. Requires <em>SPWebUrl</em>, <em>ContentTypeId</em>, <em>NormListID</em> and <em>NormUniqueID</em> to be selected in <em>Selected properties</em>.</td>
+<td>False.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="people">People<a class="headerlink" href="#people" title="Permanent link">&para;</a></h3>
+<p>The 'people' layout displays a list of persons with additional information. Typically, this layout is well suited for a people directory.</p>
+<p><img alt="&quot;People layout&quot;" class="center" src="../../../assets/webparts/search-results/layouts/people_layout.png" /></p>
+<p>By default, the user profile pictures are fetched from the SharePoint User Profile Service. If your user pictures are stored in Active Directoy, make sure you synchronized them with SharePoint User Profile Service. Otherwise, a placeholder image will be displayed.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Manage people fields</strong></td>
+<td>Allows you to define you own values for people placeholder fields. <br><p align="center"><a href="../../../assets/webparts/search-results/layouts/manage_people_fields.png"><img alt="&quot;Manage people fields&quot;" src="../../../assets/webparts/search-results/layouts/manage_people_fields.png" /></a></p>As a field value, you can choose either a field property value (from the list or as free text) and without any transformation or use an Handlebars expression by clicking on the checkbox next to it. In this case, all helpers from the main template are available. Also, if the field doesn't have the <strong>'Allow HTML'</strong> indication flag enabled, it means the value will be always interpreted as text, regardless if you set an HTML value. Otherwise, your value will be interpreted as HTML for those fields (ex: '<em>Primary text</em>' placeholder field). For HTML fields you can use the special variable <code>@root.theme</code> to use theme colors (ex: <code>@root.theme.palette.themePrimary</code>) or <code>@root.slots.&lt;SlotName&gt;</code> to access slot value. If you don't set a value for those fields (i.e an empty value), they won't appear in the UI.<br><br>The <em>UPN</em>-field is necessary for displaying the native SharePoint persona card (LPC) on hover. If it contains an empty value, the persona card will not appear. If it contains an invalid value (e.g. a non-existing UPN), an empty persona card will be shown.</br></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show persona card on hover (LPC)</strong></td>
+<td>If enabled, show a person card on hover for the curren item using the native SharePoint implementation.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show persona card on hover</strong></td>
+<td>If enabled, show a person card on hover for the current item. <p align="center"><a href="../../../assets/webparts/search-results/layouts/persona_card_hover.png"><img alt="&quot;Persona card hover&quot;" src="../../../assets/webparts/search-results/layouts/persona_card_hover.png" /></a></p> This feature uses Microsoft Graph and <a href="https://docs.microsoft.com/en-us/graph/toolkit/components/person">Microsoft Graph Toolkit</a> to display information about the user and needs the following API permissions in your tenant to work: <ul><li>User.Read</li><li>People.Read</li><li>Contacts.Read</li><li>User.Read.All</li></ul><strong>If these permissions are not set, the card won't appear</strong>. You can use <a href="https://pnp.github.io/office365-cli/cmd/spo/serviceprincipal/serviceprincipal-grant-add/">PnP Office 365 CLI</a> to add correct permissions for this feature:</br></br><code>$m365 spo serviceprincipal grant add --resource '&lt;aad_app_display_name&gt;' --scope 'user_impersonation'</code>. Refer to the section below about <a href="#persona-hover-card">persona hover card customization</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show presence</strong></td>
+<td><p>If enabled, the person's presence-information will be displayed in the bottom right corner of the user's profile picture.</p>This feature uses Microsoft Graph and needs the API permission 'Presence.Read.All' in your tenant to work.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Show hover on picture only</strong></td>
+<td>If enabled, the person card (LPC) or the persona card will only appear when hovering over the profile picture, not the entire item. This provides a more focused hover experience and is useful for compact layouts.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Component size</strong></td>
+<td>The size of the person item (not only the picture). The more the size is and the more information will be displayed for each item and vice versa.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="persona-hover-card">Persona hover card<a class="headerlink" href="#persona-hover-card" title="Permanent link">&para;</a></h4>
+<p>Activating this option may slightly reduce loading performances because the user information are fecthed individually for each user (i.e result). <strong>This option shouldn't be used with large page count.</strong></p>
+<h5 id="microsoft-graph-toolkit">Microsoft Graph Toolkit<a class="headerlink" href="#microsoft-graph-toolkit" title="Permanent link">&para;</a></h5>
+<p>The hover card uses Microsoft Graph Toolkit. This means you can add additional information providing your own template like this:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> <span class="p">&lt;</span><span class="nt">mgt-person-card</span> <span class="na">inherit-details</span><span class="p">&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="p">&lt;</span><span class="nt">template</span> <span class="na">data-type</span><span class="o">=</span><span class="s">&quot;additional-details&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Stuffed Animal Friends:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Giraffe<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>lion<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Rabbit<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">&lt;/</span><span class="nt">mgt-person-card</span><span class="p">&gt;</span>
+</code></pre></div>
+More information <a href="https://docs.microsoft.com/en-us/graph/toolkit/components/person-card">here</a>.</p>
+<h3 id="debug">Debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
+<p>The 'debug' layout allows you to see all relevant data used by layout templates or data sources during render.</p>
+<p><img alt="&quot;Debug layout&quot;" class="center" src="../../../assets/webparts/search-results/layouts/debug_layout.png" /> </p>
+<p>The template context object exposes the following properties:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&quot;paging&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;currentPageNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;The current selected page number&gt;&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">},</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;selectedFilters&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;List of currently selected filters&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;filterOperator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Operator to use between filters&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;instanceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;The connected Filters Web Part instance ID&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">&quot;filtersConfiguration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;The filters configuration&gt;&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">},</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nt">&quot;inputQueryText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;The current input query text (Ex: search box text)&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nt">&quot;slots&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Hashtable of configured slots for the current data source. Usage: {{slot item @root.slots}} &gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nt">&quot;theme&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Current theme variables&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Web Part properties from property bag&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">&quot;site&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Contextual information for the SharePoint site collection that is hosting the page&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">&quot;web&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Contextual information for the SharePoint web that is hosting the page&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">&quot;list&quot;</span><span class="w"> </span><span class="p">:</span><span class="s2">&quot;&lt;Contextual information for the SharePoint list that is hosting the page&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nt">&quot;listItem&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;Contextual information for the SharePoint list item that is hosting the page&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">&quot;cultureInfo&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;It provides culture info for the current user of the application&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;It provides contextual information for the SharePoint user that is accessing the page&gt;&quot;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">},</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;The data source data&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="nt">&quot;instanceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;The Web Part instance ID&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="nt">&quot;utils&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="nt">&quot;defaultImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;The default image content to display when no thummbnail is available (Base64)&gt;&quot;</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="custom">Custom<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
+<p>The 'Custom' layout is a minimal layout to start with if you want to create your own customized UI from scratch.</p>
+<p>You can also start from an existing layout by first selecting it, and then click <code>{}</code> next to the <em>Edit results template</em> field. This will copy the selected template and allow you to make modifications as needed.</p>
+<p><img alt="&quot;Custom layout&quot;" class="center" src="../../../assets/webparts/search-results/layouts/custom_layout.png" /> </p>
+<blockquote>
+<p>Updating a builtin layout (ex: 'Cards', 'Detail List', etc.) will automatically switch the selected layout to 'Custom' with your modifications as content. <strong>All previous custom layout content will be overwritten</strong>.</p>
+</blockquote>
+<p><img alt="&quot;Custom edit&quot;" class="center" src="../../../assets/webparts/search-results/layouts/custom_edit.png" /> </p>
+<p>You have also the ability to use an external <em>.html</em> file to centralize your customizations. This file must be stored in an accessible location for uses (ex: a SharePoint document library with <em>'Read'</em> permissions for concerned users).</p>
+<p><img alt="&quot;External file&quot;" class="center" src="../../../assets/webparts/search-results/layouts/custom_external_file.png" /> </p>
+<blockquote>
+<p>Unless you specify an external file, the template content is stored in the Web Part property bag.</p>
+</blockquote>
+<p>Updating the layout HTML template is a good option for minor UI updates (Ex: add a link, update colors, etc.). For more control over the UI, you may want to use the extensibility library feature.</p>
+<h2 id="common-settings">Common settings<a class="headerlink" href="#common-settings" title="Permanent link">&para;</a></h2>
+<p>For all layouts, some common settings are available:</p>
+<p><img alt="&quot;Common options&quot;" class="center" src="../../../assets/webparts/search-results/layouts/common_options.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Allow items selection</strong></td>
+<td>If enabled, allow items to be selected in default layouts. See <a href="../connections/item-selection/">documentation</a> for usage.</td>
+<td>Disabled.</td>
+</tr>
+<tr>
+<td><strong>Allow multiple selection</strong></td>
+<td>If the item selection is allowed, specify if users can select multiple items</td>
+<td>Disabled.</td>
+</tr>
+<tr>
+<td><strong>Preserve selection on empty click</strong></td>
+<td>If the item selection is allowed, specify if a click outside of the selection zone should clear the selection</td>
+<td>Disabled.</td>
+</tr>
+<tr>
+<td><strong>Hide this web part if there's nothing to show</strong></td>
+<td>If there is no results, the Web Part will remain blank in display mode (title and 'See all' link included). In edit mode, you will see a message indicating there is no results. <p align="center"><img alt="&quot;Common options&quot;" src="../../../assets/webparts/search-results/layouts/hide_webpart.png" /></p></td>
+<td>Disabled.</td>
+</tr>
+<tr>
+<td><strong>Show results count</strong></td>
+<td>Hide or display the results count for the current query.</td>
+<td>Enabled.</td>
+</tr>
+<tr>
+<td><strong>Use Microsoft Graph Toolkit</strong></td>
+<td>Enable or disable the Microsoft Graph Toolkit to be used in Handlebars template. Refer to the <a href="https://docs.microsoft.com/en-us/graph/toolkit/overview">MGT documentation</a> to see available components.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="result-types">Result types<a class="headerlink" href="#result-types" title="Permanent link">&para;</a></h3>
+<p>The result types feature gives you the ability to apply a conditional rendering at item level according to data source field values.</p>
+<p><img alt="Result Types" class="center" src="../../../assets/webparts/search-results/layouts/result_types_btn.png" /></p>
+<blockquote>
+<p>Not all layouts support the result types feature (ex: Details lsit and slider layouts).</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<p>Given the following conditions, we apply a border with a specific color for each: </p>
+<p><img alt="Result Types" class="center" src="../../../assets/webparts/search-results/layouts/result_types.png" /></p>
+<p><img alt="Result Types template" class="center" src="../../../assets/webparts/search-results/layouts/result_types_template.png" /></p>
+<p>The result would be like this:</p>
+<p><img alt="Result Types template" class="center" src="../../../assets/webparts/search-results/layouts/result_types_result.png" /></p>
+<p>The following operators are supported:</p>
+<ul>
+<li>Equals</li>
+<li>Not equals</li>
+<li>Contains</li>
+<li>StartsWith</li>
+<li>Greater Or Equal</li>
+<li>Less Or Equal</li>
+<li>Less than</li>
+<li>Greater than</li>
+<li>Is not null</li>
+</ul>
+<p>In case you use a custom template, you can still benefit from this feature following this markup:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{{#&gt; resultTypes}}
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  {{!-- The block below will be used as default item template if no result types matched --}}
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;template_result&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>      <span class="cm">&lt;!-- Your default template markup --&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>{{/resultTypes}}
+</code></pre></div>
+<p>Handlebars <a href="https://handlebarsjs.com/guide/partials.html">partials</a> are used behind the scenes and conditions are built dynamically using a recursive if/else structure.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../tokens/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tokens" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Tokens
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../connections/" class="md-footer__link md-footer__link--next" aria-label="Next: Connections" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Connections
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/m365pnp" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://microsoft-search.github.io/pnp-modern-search/" target="_blank" rel="noopener" title="microsoft-search.github.io" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "instant"], "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

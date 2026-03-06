@@ -1,0 +1,1987 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/extensibility/templating/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Templating - PnP Modern Search (v4)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"";--md-code-font-family:"Ubuntu Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#customize-layout-templates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PnP Modern Search (v4)" class="md-header__button md-logo" aria-label="PnP Modern Search (v4)" data-md-component="logo">
+      
+  <img src="../../assets/pnp_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PnP Modern Search (v4)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Templating
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/microsoft-search/pnp-modern-search/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../usage/search-results/" class="md-tabs__link">
+        Search Results
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../usage/search-filters/" class="md-tabs__link">
+        Search Filters
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../usage/search-verticals/" class="md-tabs__link">
+        Search Verticals
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../usage/search-box/" class="md-tabs__link">
+        Search Box
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Extensibility
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PnP Modern Search (v4)" class="md-nav__button md-logo" aria-label="PnP Modern Search (v4)" data-md-component="logo">
+      
+  <img src="../../assets/pnp_logo.png" alt="logo">
+
+    </a>
+    PnP Modern Search (v4)
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/microsoft-search/pnp-modern-search/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenarios/" class="md-nav__link">
+        Scenario tutorials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../create-custom-layouts/" class="md-nav__link">
+        Create custom layouts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-contribute/" class="md-nav__link">
+        How to contribute?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-the-doc/" class="md-nav__link">
+        Building documentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v3/" class="md-nav__link">
+        Version 3
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Search Results
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Results" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Search Results
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-results/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-results/data-sources/" class="md-nav__link">
+        Data sources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-results/slots/" class="md-nav__link">
+        Slots
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-results/tokens/" class="md-nav__link">
+        Tokens
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-results/layouts/" class="md-nav__link">
+        Layouts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-results/connections/" class="md-nav__link">
+        Connections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Extensibility
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Search Filters
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Filters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Search Filters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-filters/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-filters/layouts/" class="md-nav__link">
+        Layouts
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Search Verticals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Verticals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Search Verticals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-verticals/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Search Box
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Search Box" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Search Box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/search-box/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        Extensibility
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extensibility" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Extensibility
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Extensibility
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Templating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Templating
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#template-types" class="md-nav__link">
+    Template types
+  </a>
+  
+    <nav class="md-nav" aria-label="Template types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handlebars" class="md-nav__link">
+    Handlebars
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-cards" class="md-nav__link">
+    Adaptive cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#both-techniques" class="md-nav__link">
+    Both techniques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handlebars-html-and-css-customizations" class="md-nav__link">
+    Handlebars, HTML and CSS customizations
+  </a>
+  
+    <nav class="md-nav" aria-label="Handlebars, HTML and CSS customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-structure" class="md-nav__link">
+    Template structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handlebars-helpers" class="md-nav__link">
+    Handlebars helpers
+  </a>
+  
+    <nav class="md-nav" aria-label="Handlebars helpers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#daydiff" class="md-nav__link">
+    dayDiff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getattachments" class="md-nav__link">
+    getAttachments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcountmessage" class="md-nav__link">
+    getCountMessage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdate" class="md-nav__link">
+    getDate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgraphpreviewurl" class="md-nav__link">
+    getGraphPreviewUrl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpagecontext" class="md-nav__link">
+    getPageContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsummary" class="md-nav__link">
+    getSummary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettagname" class="md-nav__link">
+    getTagName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getunique" class="md-nav__link">
+    getUnique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuniquecount" class="md-nav__link">
+    getUniqueCount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geturlfield" class="md-nav__link">
+    getUrlField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geturlparameter" class="md-nav__link">
+    getUrlParameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuseremail" class="md-nav__link">
+    getUserEmail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    #group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex" class="md-nav__link">
+    regex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot" class="md-nav__link">
+    slot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#times" class="md-nav__link">
+    #times
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlparse" class="md-nav__link">
+    urlParse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-built-in-web-components" class="md-nav__link">
+    Using built-in web components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-css-styles" class="md-nav__link">
+    Custom CSS styles
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom CSS styles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-behavior" class="md-nav__link">
+    Default Behavior
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-css-layers" class="md-nav__link">
+    Use of CSS Layers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-error-message-using-css" class="md-nav__link">
+    Hide error message using CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-sharepoint-contexts-and-theme-in-your-templates" class="md-nav__link">
+    Use SharePoint contexts and theme in your templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-with-placeholders" class="md-nav__link">
+    Work with placeholders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-graph-toolkit" class="md-nav__link">
+    Microsoft Graph Toolkit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-templates-with-item-selection" class="md-nav__link">
+    Build templates with item selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-example-with-item-selection" class="md-nav__link">
+    Template example with item selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-cards-customizations" class="md-nav__link">
+    Adaptive cards customizations
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive cards customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-web-components-and-html-markup-in-adaptive-cards" class="md-nav__link">
+    Use web components and HTML markup in adaptive cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-a-slot-in-a-adaptive-card" class="md-nav__link">
+    Reference a slot in a adaptive card
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference a slot in a adaptive card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styling-your-adaptive-cards" class="md-nav__link">
+    Styling your adaptive cards
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_layout/" class="md-nav__link">
+        Custom layout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_web_component/" class="md-nav__link">
+        Custom web component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_suggestions_provider/" class="md-nav__link">
+        Custom suggestions provider
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handlebars_customizations/" class="md-nav__link">
+        Custom Handlebars customizations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adaptivecards_customizations/" class="md-nav__link">
+        Custom event handlers for adaptive cards actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_data_sources/" class="md-nav__link">
+        Custom data sources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_query_modifications/" class="md-nav__link">
+        Custom query modifier
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensibility_compatibility_matrix/" class="md-nav__link">
+        Compatibility matrix
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#template-types" class="md-nav__link">
+    Template types
+  </a>
+  
+    <nav class="md-nav" aria-label="Template types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handlebars" class="md-nav__link">
+    Handlebars
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-cards" class="md-nav__link">
+    Adaptive cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#both-techniques" class="md-nav__link">
+    Both techniques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handlebars-html-and-css-customizations" class="md-nav__link">
+    Handlebars, HTML and CSS customizations
+  </a>
+  
+    <nav class="md-nav" aria-label="Handlebars, HTML and CSS customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-structure" class="md-nav__link">
+    Template structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handlebars-helpers" class="md-nav__link">
+    Handlebars helpers
+  </a>
+  
+    <nav class="md-nav" aria-label="Handlebars helpers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#daydiff" class="md-nav__link">
+    dayDiff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getattachments" class="md-nav__link">
+    getAttachments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcountmessage" class="md-nav__link">
+    getCountMessage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdate" class="md-nav__link">
+    getDate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgraphpreviewurl" class="md-nav__link">
+    getGraphPreviewUrl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpagecontext" class="md-nav__link">
+    getPageContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsummary" class="md-nav__link">
+    getSummary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettagname" class="md-nav__link">
+    getTagName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getunique" class="md-nav__link">
+    getUnique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuniquecount" class="md-nav__link">
+    getUniqueCount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geturlfield" class="md-nav__link">
+    getUrlField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geturlparameter" class="md-nav__link">
+    getUrlParameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuseremail" class="md-nav__link">
+    getUserEmail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    #group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex" class="md-nav__link">
+    regex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slot" class="md-nav__link">
+    slot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#times" class="md-nav__link">
+    #times
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urlparse" class="md-nav__link">
+    urlParse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-built-in-web-components" class="md-nav__link">
+    Using built-in web components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-css-styles" class="md-nav__link">
+    Custom CSS styles
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom CSS styles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-behavior" class="md-nav__link">
+    Default Behavior
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-of-css-layers" class="md-nav__link">
+    Use of CSS Layers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-error-message-using-css" class="md-nav__link">
+    Hide error message using CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-sharepoint-contexts-and-theme-in-your-templates" class="md-nav__link">
+    Use SharePoint contexts and theme in your templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-with-placeholders" class="md-nav__link">
+    Work with placeholders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-graph-toolkit" class="md-nav__link">
+    Microsoft Graph Toolkit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-templates-with-item-selection" class="md-nav__link">
+    Build templates with item selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-example-with-item-selection" class="md-nav__link">
+    Template example with item selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-cards-customizations" class="md-nav__link">
+    Adaptive cards customizations
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive cards customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-web-components-and-html-markup-in-adaptive-cards" class="md-nav__link">
+    Use web components and HTML markup in adaptive cards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-a-slot-in-a-adaptive-card" class="md-nav__link">
+    Reference a slot in a adaptive card
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference a slot in a adaptive card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styling-your-adaptive-cards" class="md-nav__link">
+    Styling your adaptive cards
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/microsoft-search/pnp-modern-search/blob/develop/docs/extensibility/templating.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="customize-layout-templates">Customize layout templates<a class="headerlink" href="#customize-layout-templates" title="Permanent link">&para;</a></h1>
+<p>In a basic customization scenario, super users and webmasters can customize existing templates or start from a blank template to adapt the UI to their requirements. Templates can use either <a href="https://handlebarsjs.com/">Handlebars</a> or <a href="https://adaptivecards.io/">Adaptive cards</a> templates to display data retrieved from the data source. Depending on the template type, there are several options to customize a template.</p>
+<h2 id="template-types">Template types<a class="headerlink" href="#template-types" title="Permanent link">&para;</a></h2>
+<h3 id="handlebars">Handlebars<a class="headerlink" href="#handlebars" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use regular HTML markup, Handlebars syntax and <a href="#handlebars-helpers">helpers</a>.</li>
+<li><a href="#custom-css-styles">Write custom CSS styles</a>.</li>
+</ul>
+<h3 id="adaptive-cards">Adaptive cards<a class="headerlink" href="#adaptive-cards" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use declarative <a href="#adaptive-cards-customizations">Adaptive Cards</a> JSON templates with data.</li>
+</ul>
+<h3 id="both-techniques">Both techniques<a class="headerlink" href="#both-techniques" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use data sources <a href="../../usage/search-results/slots/">slots</a></li>
+<li>Use default <a href="#using-built-in-web-components">web components</a> provided by the solution.</li>
+<li>Use <a href="#microsoft-graph-toolkit">Microsoft Graph Toolkit components</a>.</li>
+</ul>
+<h2 id="handlebars-html-and-css-customizations">Handlebars, HTML and CSS customizations<a class="headerlink" href="#handlebars-html-and-css-customizations" title="Permanent link">&para;</a></h2>
+<p><img alt="&quot;Handlebars&quot;" class="center" src="../../assets/extensibility/handlebars_templating.png" /></p>
+<blockquote>
+<p>The templates and fields HTML markup is sanitized automatically preventing XSS attacks. We used <a href="https://github.com/cure53/DOMPurify"><code>DOMPurify</code></a> to do so. It means for instance, you cannot add your own <code>&lt;script&gt;</code> tags or inline JavaScript.</p>
+</blockquote>
+<h3 id="template-structure">Template structure<a class="headerlink" href="#template-structure" title="Permanent link">&para;</a></h3>
+<p>A layout template is always split into two distinct parts:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="p">&lt;</span><span class="nt">content</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;template&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="cm">&lt;!-- Your template content here --&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;/</span><span class="nt">content</span><span class="p">&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">&lt;</span><span class="nt">content</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;placeholder&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="cm">&lt;!-- Your placeholder content here --&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">&lt;/</span><span class="nt">content</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>A <code>template</code> part, containing the HTML markup to display your data <strong>once fetched</strong>. This part is mandatory to display your data.</p>
+</li>
+<li>
+<p>A <code>placeholder</code> part, containing the HTML markup to display as placeholder <strong>while the data are getting fetched</strong>. This part is optional.</p>
+</li>
+</ul>
+<p>Both can use Handlebars and web components (Microsoft Graph Toolkit included).</p>
+<h3 id="handlebars-helpers">Handlebars helpers<a class="headerlink" href="#handlebars-helpers" title="Permanent link">&para;</a></h3>
+<p>The following custom helpers are available in addition to the <a href="https://github.com/helpers/handlebars-helpers">handlebars-helpers</a>. If those don't do the job for you, you can still write your own using the <a href="../handlebars_customizations/">extensibility library</a>.</p>
+<blockquote>
+<p>The <code>markdown</code> and <code>logging</code> helpers are not available. For <code>times</code> use <code>multiply</code> as <code>times</code> is a custom iterator.</p>
+</blockquote>
+<h4 id="daydiff">dayDiff<a class="headerlink" href="#daydiff" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{dayDiff &lt;date1&gt; &lt;date2&gt;}}</code></p>
+<p><strong>Description</strong> Return the number of days between two dates, eg. show an icon for files created within the last 30 days.</p>
+<p><strong>Example</strong> <code>{{#compare (dayDiff (getDate Created 'YYYY-MMM-DD' ) (getDate timestamp 'YYYY-MMM-DD' )) "&lt;=" 30 }} &lt;img src='/SiteAssets/New.png' /&gt;{{/compare}}</code></p>
+<h4 id="getattachments">getAttachments<a class="headerlink" href="#getattachments" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getAttachments}}</code></p>
+<p><strong>Description</strong> Return object structure for list item attachments.</p>
+<p><strong>Example</strong> <code>{{#getAttachments LinkOfficeChild}}&lt;a href="{{url}}"&gt;{{index}} - {{fileName}}&lt;/a&gt;{{/getAttachments}}</code></p>
+<h4 id="getcountmessage">getCountMessage<a class="headerlink" href="#getcountmessage" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getCountMessage &lt;total items count&gt; &lt;keywords&gt;}}</code></p>
+<p><strong>Description</strong> Display a friendly message displaying the result and the entered keywords.</p>
+<p><strong>Example</strong> <code>{{getCountMessage 5 "contoso"}}</code> will display <em>'5 results for 'contoso'</em>.</p>
+<h4 id="getdate">getDate<a class="headerlink" href="#getdate" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getDate &lt;data_value&gt; "&lt;format&gt;" "&lt;time handling&gt;"}}</code></p>
+<p><strong>Description</strong> Format the date with <a href="https://momentjs.com/docs/#/parsing/string-format/">Moment.js</a> according to the current language. Date in the managed property should be on the form <code>2018-09-10T06:29:25.0000000Z</code> for the function to work. <code>&lt;time handling&gt;</code> is optional and takes:</p>
+<ul>
+<li>0 = format to browsers time zone (default)</li>
+<li>1 = ignore Z time and handle as browsers local time zone</li>
+<li>2 = strip time and set to 00:00:00 in browsers local time zone</li>
+<li>3 = display in the time zone for the current web</li>
+<li>4 = display in the time zone from the user's profile</li>
+</ul>
+<p><strong>Example</strong> <code>{{getDate 2018-09-10T06:29:25.0000000Z 'LL'}}</code></p>
+<h4 id="getgraphpreviewurl">getGraphPreviewUrl<a class="headerlink" href="#getgraphpreviewurl" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getGraphPreviewUrl "&lt;absolute_URL&gt;"}}</code></p>
+<p><strong>Description</strong> Try to determine the preview URL based on an absolute URL using the unified Microsoft Graph URL syntax. For instance, <em><code>https://contoso.sharepoint.com/sites/dev/Shared%20Documents/MyDocument.pdf</code></em> becomes <em><code>https://contoso.sharepoint.com/sites/dev/Shared%20Documents/?id=/sites/dev/Shared%20Documents/MyDocument.pdf&amp;parent=/sites/dev/Shared%20Documents</code></em></p>
+<p><strong>Example</strong> <code>{{getGraphPreviewUrl "https://contoso.sharepoint.com/sites/dev/Shared%20Documents/MyDocument.pdf"}}</code></p>
+<h4 id="getpagecontext">getPageContext<a class="headerlink" href="#getpagecontext" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getPageContext "&lt;SPFx page property&gt;"}}</code></p>
+<p><strong>Description</strong> Retrieve a property from the SPFx context object.</p>
+<p><strong>Example</strong> <code>{{getPageContext "user.displayName"}}</code> or <code>{{getPageContext "cultureInfo.currentUICultureName"}}</code></p>
+<h4 id="getsummary">getSummary<a class="headerlink" href="#getsummary" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getSummary "&lt;value&gt;"}}</code></p>
+<p><strong>Description</strong> <em>Use with SharePoint Search data source and the HitHighlightedSummary SharePoint search managed property</em>. Returns the formatted value for rendering.</p>
+<p><strong>Example</strong> <code>{{getSummary "HitHighlightedSummary"}}</code></p>
+<h4 id="gettagname">getTagName<a class="headerlink" href="#gettagname" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getTagName "&lt;value&gt;"}}</code></p>
+<p><strong>Description</strong> <em>Use with tag fields</em>. Returns the name of the tag, omitting the ID in the tag string (<code>L0\|#000000000-0000-0000-0000-000000000000\|…</code>).</p>
+<p><strong>Example</strong> <code>{{getTagName "Tag"}}</code></p>
+<h4 id="getunique">getUnique<a class="headerlink" href="#getunique" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getUnique items "&lt;property&gt;"}}</code></p>
+<p><strong>Description</strong> Return the unique values as a new array based on an array or property of an object in the array.</p>
+<p><strong>Example</strong> <code>{{getUnique items "NewsCategory"}}</code></p>
+<h4 id="getuniquecount">getUniqueCount<a class="headerlink" href="#getuniquecount" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getUniqueCount items "&lt;property&gt;"}}</code> or  <code>{{getUniqueCount array}}</code></p>
+<p><strong>Description</strong> Get the unique count of a property over the result set (or another array) or get the unique count of objects in an array. Example: [1,1,1,2,2,4] would return <code>3</code>.</p>
+<p><strong>Example</strong> <code>{{getUniqueCount [1,1,1,2,2,4]}}</code></p>
+<h4 id="geturlfield">getUrlField<a class="headerlink" href="#geturlfield" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getUrlField &lt;managed_propertyOWSURLH&gt; "URL|Title"}}</code></p>
+<p><strong>Description</strong> <em>Use with SharePoint Search data source</em>. Returns the URL or Title part of a URL auto-created managed property</p>
+<p><strong>Example</strong> <code>{{getUrlField MyPropertyOWSURLH "Title"}}</code></p>
+<h4 id="geturlparameter">getUrlParameter<a class="headerlink" href="#geturlparameter" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getUrlParameter &lt;parameter&gt; &lt;url&gt;}}</code></p>
+<p><strong>Description</strong> Return the query parameter value from a URL. Omitting the optional url parameter uses the current browser URL.</p>
+<p><strong>Example</strong> <code>{{getUrlParameter "k"}}</code> return the value of the <code>k</code> query parameter from the browser URL. <code>{{getUrlParameter "k" "https://foo?k=test"}}</code> return the value of the <code>k</code> query parameter from the provided URL.</p>
+<h4 id="getuseremail">getUserEmail<a class="headerlink" href="#getuseremail" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{getUserEmail &lt;value&gt;}}</code></p>
+<p><strong>Description</strong> Extract the user email in a string based on a email regex  (ex: a claim). Returns the first match.</p>
+<p><strong>Example</strong> <code>{{getUserEmail "franck.cornu@contoso.onmicrosoft.com | Franck Cornu | 693A30232E667C6D656D626572736869707C6672616E636B2E636F726E7540616571756F736465762E6F6E6D6963726F736F66742E636F6D i:0#.f|membership|franck.cornu@contoso.onmicrosoft.com"}}</code></p>
+<h4 id="group">#group<a class="headerlink" href="#group" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{#group items by="&lt;property&gt;"}}</code></p>
+<p><strong>Description</strong> Group items by a specific results property. See <a href="https://github.com/shannonmoeller/handlebars-group-by">https://github.com/shannonmoeller/handlebars-group-by</a> for usage.</p>
+<p><strong>Example</strong> <code>{{#group items by="RefinableString00"}}</code></p>
+<h4 id="regex">regex<a class="headerlink" href="#regex" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{regex &lt;expression&gt; &lt;string&gt;}}</code></p>
+<p><strong>Description</strong> Run a regular expression and return the match. Return <code>-</code> if not match.</p>
+<p><strong>Example</strong> <code>{{regex '\d+' 'digit 15 is a number'}}</code> will return <code>15</code></p>
+<h4 id="slot">slot<a class="headerlink" href="#slot" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{slot item &lt;property_name&gt;}}</code></p>
+<p><strong>Description</strong> Return the <code>&lt;property_name&gt;</code> value for the <code>item</code> object. Supports deep property paths.</p>
+<p><strong>Example</strong> <code>{{slot item "property.subproperty"}}</code></p>
+<h4 id="times">#times<a class="headerlink" href="#times" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{#times &lt;number&gt;}}</code></p>
+<p><strong>Description</strong> Iterate the block <code>&lt;number&gt;</code> times.</p>
+<p><strong>Example</strong> <code>{{#times 5}} some mark up  {{/times}}</code></p>
+<h4 id="urlparse">urlParse<a class="headerlink" href="#urlparse" title="Permanent link">&para;</a></h4>
+<p><strong>Syntax</strong> <code>{{urlParse &lt;url&gt;}}</code></p>
+<p><strong>Description</strong> Same as Handlebar Helpers. Omitting the optional url parameter uses the current browser URL.</p>
+<p><strong>Example</strong> <code>{{get "query" (urlParse)}}</code> return the query part of a URL</p>
+<blockquote>
+<p>Need any other helper? Let us know <a href="https://github.com/microsoft-search/pnp-modern-search/issues">here</a>!</p>
+</blockquote>
+<h3 id="using-built-in-web-components">Using built-in web components<a class="headerlink" href="#using-built-in-web-components" title="Permanent link">&para;</a></h3>
+<p>By default, several components are available (<a href="../web_components_list/">see the complete list</a>). If these does not fit your requirement, you can still create your own using the <a href="../custom_web_component/">extensibility library</a>.</p>
+<h3 id="custom-css-styles">Custom CSS styles<a class="headerlink" href="#custom-css-styles" title="Permanent link">&para;</a></h3>
+<h4 id="default-behavior">Default Behavior<a class="headerlink" href="#default-behavior" title="Permanent link">&para;</a></h4>
+<p>Inside an HTML template (or layout field), you can write your own CSS styles using a <code>&lt;style&gt;</code> tag. Even better, you can inject Handlebars variables, helpers, conditional blocks, etc. right inside it and get dynamic classes or attributes</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">content</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;data-content&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="p">.</span><span class="nc">example-themePrimary</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="err">{{</span><span class="o">@</span><span class="n">root</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">palette</span><span class="o">.</span><span class="n">themePrimary</span><span class="p">}</span><span class="err">}</span><span class="o">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="err">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="o">...</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;template&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        ...
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    ...
+</code></pre></div>
+<p>However, all CSS rules (including <code>@media</code> rules) will be all prefixed automatically by an unique ID (<code>pnp-template_&lt;Web Part instance ID&gt;</code>) to make sure styles are isolated from other Web Parts on the page. We do this to avoid conflicts between classes in the global context.</p>
+<h4 id="use-of-css-layers">Use of CSS Layers<a class="headerlink" href="#use-of-css-layers" title="Permanent link">&para;</a></h4>
+<p>In contrast to the automatically prefixing all styles with the web part instance ids, the style can live in its own so called layer. This way styles bleeding into the rest of the page can be avoided.</p>
+<p>Layered styles - in contrast to the default behavior - allows mechanisms such as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries">container queries</a> and other future improvements such as <a href="https://developer.chrome.com/articles/css-nesting/">CSS Nesting</a>.</p>
+<p>CSS support a mechanism for isolation CSS declarations in layers. To use this mechanism specify on the style tag the data property <code>data-cssscope</code> as layer.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">content</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;data-content&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="p">&lt;</span><span class="nt">style</span> <span class="na">data-cssscope</span><span class="o">=</span><span class="s">&quot;layer&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="p">.</span><span class="nc">example-themePrimary</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="err">{{</span><span class="o">@</span><span class="n">root</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">palette</span><span class="o">.</span><span class="n">themePrimary</span><span class="p">}</span><span class="err">}</span><span class="o">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="err">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="o">...</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;template&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        ...
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    ...
+</code></pre></div>
+<p>This convert the CSS into the following form:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span><span class="o">&lt;</span><span class="nt">style</span><span class="w"> </span><span class="nt">data-cssscope</span><span class="o">=</span><span class="s2">&quot;layer&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="p">@</span><span class="k">layer</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="p">.</span><span class="nc">example-themePrimary</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="err">{{</span><span class="o">@</span><span class="n">root</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">palette</span><span class="o">.</span><span class="n">themePrimary</span><span class="p">}}</span><span class="o">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="err">}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="o">...</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="err">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Browser support for <a href="https://caniuse.com/css-cascade-layers">CSS Layer</a> on can-i-use.</p>
+<h3 id="hide-error-message-using-css">Hide error message using CSS<a class="headerlink" href="#hide-error-message-using-css" title="Permanent link">&para;</a></h3>
+<p>By default the web parts will output an error message if something goes wrong on for example API calls.</p>
+<p>If you want to hide the error message you can add the following CSS in your custom template.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">content</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;data-content&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="p">.</span><span class="nc">pnpSearchResultsErrorMessage</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="o">...</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;template&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        ...
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    ...
+</code></pre></div>
+<h3 id="use-sharepoint-contexts-and-theme-in-your-templates">Use SharePoint contexts and theme in your templates<a class="headerlink" href="#use-sharepoint-contexts-and-theme-in-your-templates" title="Permanent link">&para;</a></h3>
+<p>If you need to use current site theme colors, fonts and so on you can use the <code>theme</code> property available in the <code>@root</code> Handlebars context like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">content</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;data-content&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">            </span><span class="p">.</span><span class="nc">example-themePrimary</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>                color: {{@root.theme.palette.themePrimary}};
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>            }
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>            ...
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="p">&lt;/</span><span class="nt">styles</span><span class="p">&gt;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        ...
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;example-themePrimary&quot;</span><span class="p">&gt;</span>{{Title}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        ...
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">&lt;/</span><span class="nt">content</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>If you want to reference the current user, you can get that from a context variable like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Login: {{@root.context.user.loginName}}
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>You can also use this variable in the 'Details List' and 'Cards' layouts in field expressions.</p>
+</blockquote>
+<p><img alt="Theme usage in fields" src="../../assets/theme_field.png" /></p>
+<p>A good way to see all available context values is to switch to the debug layout and inspect the values:</p>
+<p><img alt="Theme properties" src="../../assets/theme_debug.png" /></p>
+<h3 id="work-with-placeholders">Work with placeholders<a class="headerlink" href="#work-with-placeholders" title="Permanent link">&para;</a></h3>
+<p>To indicate the data are loading, you can create placeholders (shimmers) using the <code>&lt;content id="placeholder-content"&gt;</code> section of your HTML template:
+The placeholder is only loaded during first data load. For subsequent requests, a overlay will be displayed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">content</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;placeholder-content&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="p">.</span><span class="nc">placeholder</span><span class="w"> </span><span class="p">.</span><span class="nc">icon</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">            </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="p">.</span><span class="nc">placeholder</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">            </span><span class="k">list-style</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">        </span><span class="p">.</span><span class="nc">placeholder</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">            </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">            </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;placeholder&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>            {{#times 5}}
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;icon placeholder--shimmer&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>                    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;placeholder--shimmer placeholder--line&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 60%&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>            {{/times}}
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="p">&lt;/</span><span class="nt">content</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Use CSS classes <code>placeholder--shimmer</code> and <code>placeholder--line</code> to build your placeholders. Basically, you can reuse the same HTML structure as your template content markup, but using these these classes instead to fill areas.</p>
+<p>If no placeholder is present in the template, a default one will be loaded.</p>
+<h3 id="microsoft-graph-toolkit">Microsoft Graph Toolkit<a class="headerlink" href="#microsoft-graph-toolkit" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>The Microsoft Graph Toolkit is a collection of reusable, framework-agnostic web components and helpers for accessing and working with Microsoft Graph. The components are fully functional right of out of the box, with built in providers that authenticate with and fetch data from Microsoft Graph.</p>
+</blockquote>
+<p>In the solution, you can use Graph Tookit components without the need to re-authenticate against Microsoft Graph because the Web Parts already use the <a href="https://docs.microsoft.com/graph/toolkit/providers/sharepoint">SharePoint provider</a>.</p>
+<p>Refer to the official documentation to see <a href="https://docs.microsoft.com/graph/toolkit/components/login">all available components</a>. For instance, we use the Microsoft Graph Toolkit for the <a href="../../usage/search-results/layouts/people/">people layout</a> via <code>&lt;mgt-person&gt;</code>.</p>
+<h3 id="build-templates-with-item-selection">Build templates with item selection<a class="headerlink" href="#build-templates-with-item-selection" title="Permanent link">&para;</a></h3>
+<p>If your template requires items selection for dynamic filtering, you can follow these guidelines to design your template structure. The item selection feature is based on the Office Fluent UI <a href="https://developer.microsoft.com/fluentui#/controls/web/selection"><strong>Selection</strong></a> component and custom <code>data</code> attributes.</p>
+<p>The available data attributes you can use in your HTML template are:</p>
+<ul>
+<li><code>data-selection-index</code>: the index of the item being represented. This would go on the root of the tile/row.</li>
+<li><code>data-selection-toggle</code>: this boolean flag would be set on the element which should handle toggles.This could be a checkbox or a div.</li>
+<li><code>data-selection-all-toggle</code>: this boolean flag indicates that clicking it should toggle all selection.</li>
+<li><code>data-selection-disabled</code>: allows a branch of the DOM to be marked to ignore input events that alter selections.</li>
+<li><code>data-selection-select</code>: allows a branch of the DOM to ensure that the current item is selected upon interaction.</li>
+</ul>
+<p>As item key you must use the builtin Handlebars <code>{{@index}}</code> property in the <code>{{#each}}</code> loop. Also because state managed is internally managed by the Web Part, we provide you an Handlebars helper <code>isItemSelected</code> to help to apply styles depending of the selection (ex: apply a CSS class or not). To use this helper correctly, you must pass the current selected keys and current index to get the selected state for an item:</p>
+<p><code>(isItemSelected @root.selectedKeys @index)</code></p>
+<h3 id="template-example-with-item-selection">Template example with item selection<a class="headerlink" href="#template-example-with-item-selection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="p">.</span><span class="nc">selected</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="err">{{</span><span class="o">@</span><span class="n">root</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">palette</span><span class="o">.</span><span class="n">themeLighter</span><span class="p">}</span><span class="err">}</span><span class="o">;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="nt">border</span><span class="o">:</span><span class="w"> </span><span class="nt">1px</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="p">{</span><span class="err">{@root.theme.palette.themePrimary</span><span class="p">}</span><span class="err">}</span><span class="o">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="nt">color</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="err">{@root.theme.palette.themePrimary</span><span class="p">}</span><span class="err">}</span><span class="o">;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="err">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="o">...</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>...
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>{{#each data.items as |item|}}
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;{{#if (isItemSelected @root.selectedKeys @index)}}selected{{/if}}&quot;</span> <span class="na">data-is-focusable</span> <span class="na">data-selection-index</span><span class="o">=</span><span class="s">&quot;{{@index}}&quot;</span> <span class="na">data-selection-toggle</span><span class="p">&gt;</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{slot item @root.slots.Title}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>{{/each}}
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>If you allowed multi items selection, you must use <code>CTRL</code> + <code>Left click</code> to select multiple elements. You can also select a range of elements using <code>SHIFT</code> + <code>Left click</code>.</li>
+</ul>
+</div>
+<h2 id="adaptive-cards-customizations">Adaptive cards customizations<a class="headerlink" href="#adaptive-cards-customizations" title="Permanent link">&para;</a></h2>
+<p><img alt="&quot;Adaptive Cards&quot;" class="center" src="../../assets/extensibility/adaptive_cards_templating.png" /></p>
+<p>As defined by Microsoft:</p>
+<p><em>"Adaptive Cards are platform-agnostic snippets of UI, authored in JSON, that apps and services can openly exchange. When delivered to a specific app, the JSON is transformed into native UI that automatically adapts to its surroundings. It helps design and integrate light-weight UI for all major platforms and frameworks."</em></p>
+<p>This new way of displaying data can be used in the Modern Data Visualizer solution as well.</p>
+<blockquote>
+<p>You can use the adaptive cards builder to create your template <a href="https://www.adaptivecards.io/designer/">https://www.adaptivecards.io/designer/</a>.
+Adaptive cards can be used for SharePoint Search and Micrososft Search data sources.</p>
+</blockquote>
+<h3 id="use-web-components-and-html-markup-in-adaptive-cards">Use web components and HTML markup in adaptive cards<a class="headerlink" href="#use-web-components-and-html-markup-in-adaptive-cards" title="Permanent link">&para;</a></h3>
+<p>Web components and HTML are supported in adaptive cards through markdown processing. To use it simply, add your HTML markup in the text property. Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="err">...</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Column&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TextBlock&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">            </span><span class="nt">&quot;wrap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;pnp-iconfile class=&#39;icon&#39; data-extension=&#39;${string(jPath($data, concat(&#39;.&#39;,$root.slots[&#39;FileType&#39;]))[0])}&#39;&gt;&lt;/pnp-iconfile&gt;&quot;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="p">}</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="err">...</span>
+</code></pre></div>
+<blockquote>
+<p>HTML in adaptive cards will be sanitized.</p>
+</blockquote>
+<h3 id="reference-a-slot-in-a-adaptive-card">Reference a slot in a adaptive card<a class="headerlink" href="#reference-a-slot-in-a-adaptive-card" title="Permanent link">&para;</a></h3>
+<p>Since it is not possible to create custom functions with adaptive cards templates right now, slots values can only be accessed using the builtin <a href="https://docs.microsoft.com/azure/bot-service/adaptive-expressions/adaptive-expressions-prebuilt-functions?view=azure-bot-service-4.0#jPath"><code>jPath</code> function</a> and the following syntax:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TextBlock&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="nt">&quot;wrap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${string(jPath($data, concat(&#39;.&#39;,$root.slots[&#39;&lt;your_slot_name&gt;&#39;]))[0])}&quot;</span><span class="err">&quot;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="err">    }</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="err">],</span>
+</code></pre></div>
+<p>To reference a field without a slot, just use its name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TextBlock&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="nt">&quot;wrap&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${Title}&quot;</span><span class="err">&quot;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="err">    }</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="err">],</span>
+</code></pre></div>
+<h4 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>string()</code> is here to make sure the result of the jPath expression will always be a string. <strong>If omitted, if the slot provided (i.e. the object path) doesn't exist, it will return <code>null</code> causing a render error</strong>. The <code>jPath</code> function always returns an array.</li>
+<li><code>jPath(&lt;data&gt;, concat('.', $root.slots['&lt;your_slot_name&gt;']))</code> where <code>&lt;data&gt;</code> is the JSON object used to resolve the slot. When looping through <code>items</code>, use the <code>$data</code> token representing the current item with properties. The expression <code>concat('.', $root.slots['&lt;your_slot_name&gt;']))</code> is to comply with the jPath syntax: every property path should be begin with a '.' (See the official jPath <a href="https://www.npmjs.com/package/jspath">documentation</a>).</li>
+</ul>
+<h3 id="styling-your-adaptive-cards">Styling your adaptive cards<a class="headerlink" href="#styling-your-adaptive-cards" title="Permanent link">&para;</a></h3>
+<p>When selecting the adaptive cards mode, you can also setup styles through the <a href="https://docs.microsoft.com/adaptive-cards/rendering-cards/host-config">host configuration</a>.</p>
+<p>From the official Microsoft documentation:</p>
+<p><em>"HostConfig is a cross-platform configuration object that specifies how an Adaptive Card Renderer generates UI."</em>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Extensibility" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Extensibility
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../custom_layout/" class="md-footer__link md-footer__link--next" aria-label="Next: Custom layout" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Custom layout
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/m365pnp" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://microsoft-search.github.io/pnp-modern-search/" target="_blank" rel="noopener" title="microsoft-search.github.io" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "instant"], "search": "../../assets/javascripts/workers/search.709b4209.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>
