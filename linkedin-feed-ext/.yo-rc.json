@@ -1,0 +1,23 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "linkedin-feed-ext",
+    "environment": "spo",
+    "componentType": "library",
+    "componentName": "LinkedinFeedExt",
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "nodeVersion": "22.22.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "linkedin-feed-ext",
+    "libraryId": "4fdd2d20-bb92-4137-9bf1-7327ea4b6bb6",
+    "packageManager": "npm",
+    "solutionShortDescription": "linkedin-feed-ext description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

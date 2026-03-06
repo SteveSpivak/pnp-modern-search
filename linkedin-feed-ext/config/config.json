@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "linkedin-feed-ext-library": {
+      "components": [
+        {
+          "entrypoint": "./lib/index.js",
+          "manifest": "./src/libraries/linkedinFeedExt/LinkedinFeedExtLibrary.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LinkedinFeedExtLibraryStrings": "lib/libraries/linkedinFeedExt/loc/{locale}.js"
+  }
+}
